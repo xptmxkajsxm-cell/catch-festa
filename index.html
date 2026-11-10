@@ -170,6 +170,12 @@ h2.grp{font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--muted);ma
 .rvform textarea{min-height:64px;resize:vertical}
 .rvform .rrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .rvform .rmsg{font-size:12.5px;color:var(--muted)}
+.offl{font-weight:700!important;color:var(--ink)!important;border:1px solid var(--line);border-radius:999px;padding:3px 10px;text-decoration:none!important;background:color-mix(in srgb,var(--accent) 10%,var(--surface))}
+.offl:hover{border-color:var(--accent)}
+.parks{display:flex;flex-wrap:wrap;gap:8px}
+.parks a{font-size:13.5px;font-weight:600;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--surface);display:inline-flex;gap:6px;align-items:center}
+.parks a:hover{border-color:var(--c-park)}
+.parks a small{color:var(--muted);font-weight:400}
 .fav{font:inherit;font-size:13px;background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:3px 10px;cursor:pointer}
 .fav[aria-pressed="true"]{background:var(--hot);border-color:var(--hot);color:var(--bg)}
 .src{font-size:11.5px;color:var(--muted)}
@@ -353,6 +359,10 @@ footer a{color:var(--muted)}
     <div id="calDay"></div>
   </section>
 
+  <details class="panel" id="parkPanel">
+    <summary>테마파크·유원지 바로가기</summary>
+    <div class="in"><div class="parks" id="parkLinks"></div></div>
+  </details>
   <details class="panel" id="watchPanel">
     <summary>기다리는 페스티벌 <span id="watchCount" class="feenote"></span></summary>
     <div class="in">
@@ -642,10 +652,12 @@ upInput.addEventListener("change",async()=>{
     await db.collection("events").doc(id).update({imageId:r.id});
   }catch(err){btn.disabled=false;btn.textContent=err&&err.code==="too_large"?"20MB 이하로":err&&err.code==="unsupported_type"?"이미지 파일만 가능":"실패 · 다시 누르기"}
 });
+const PARKS=[["롯데월드 어드벤처 부산","https://adventurebusan.lotteworld.com/kor/main/index.do","부산"],["롯데월드","https://adventure.lotteworld.com/kor/main/index.do","서울"],["에버랜드","https://www.everland.com/","경기"],["레고랜드","https://www.legoland.kr/","강원"],["서울랜드","https://www.seoulland.co.kr/","경기"],["경주월드","https://www.gjw.co.kr/","경북"],["이월드","https://www.eworld.kr/","대구"],["오월드","https://www.oworld.kr/","대전"],["서울대공원","https://grandpark.seoul.go.kr/","경기"],["어린이대공원","https://www.sisul.or.kr/open_content/childrenpark/","서울"]];
+function parkUrl(e){const t=(e.place||"")+" "+(e.title||"");const hit=PARKS.find(([n,,r])=>t.includes(n)&&(n!=="롯데월드"||e.region!=="부산"));return hit?hit[1]:""}
 function card(e){
   const c=catOf(e.category),b=badge(e),fav=state.favs.has(e.id);
   const mapUrl="https://map.naver.com/p/search/"+encodeURIComponent((e.place||e.title).split("(")[0].trim());
-  const src=safeUrl(e.source);
+  const src=safeUrl(e.source),off=safeUrl(e.officialUrl)||parkUrl(e);
   const fe=feeOf(e);
   const feeHTML=fe.k?`<span class="feepill ${fe.k}">${fe.k==="free"?"무료":"유료"}</span>${fe.note&&fe.note!=="무료"?`<span class="feenote">${esc(fe.note)}</span>`:""}`:(false?`<button class="fav" data-feecheck="${esc(cidOf(e))}">요금 확인</button>`:`<span class="feenote">요금 정보 없음</span>`);
   return `<article class="card" style="--cc:var(${c.color})">
@@ -660,8 +672,9 @@ function card(e){
     ${tixHTML(e)}
     <div class="actions">
       <button class="fav" data-fav="${esc(e.id)}" aria-pressed="${fav}">${fav?"♥ 찜함":"♡ 찜하기"}</button>
+      ${off?`<a class="offl" href="${esc(off)}" target="_blank" rel="noopener">${e.officialUrl?"공식 사이트":"파크 홈페이지"} ↗</a>`:""}
       <a href="${mapUrl}" target="_blank" rel="noopener">네이버 지도</a>
-      ${src?`<a href="${esc(src)}" target="_blank" rel="noopener">출처 보기</a>`:""}
+      ${src&&src!==off?`<a href="${esc(src)}" target="_blank" rel="noopener">출처 보기</a>`:""}
       ${e.from==="tour"?`<span class="src">TourAPI</span>`:""}
       ${window.CF_REVIEWS?`<button class="fav" data-rv="${esc(e.id)}" aria-expanded="${state.rvOpen.has(e.id)}">${rvBtnLabel(e)}</button>`:""}
     </div>
@@ -684,6 +697,7 @@ const QUICK=[
  ["food","먹거리",'<path d="M3 11h18a9 9 0 0 1-18 0z" fill="currentColor"/><path d="M8 8c0-2 2-2 2-4M12 8c0-2 2-2 2-4" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/>'],
  ["sub","서브컬처",'<path d="M7 8h10a4 4 0 0 1 4 4.5l-.6 3.2a2.4 2.4 0 0 1-4.2 1L14.5 15h-5l-1.7 1.7a2.4 2.4 0 0 1-4.2-1L3 12.5A4 4 0 0 1 7 8z" fill="currentColor"/><path d="M7.5 10.5v3M6 12h3" stroke="#000" stroke-opacity=".35" stroke-width="1.5"/><circle cx="16" cy="11" r="1" fill="#000" fill-opacity=".35"/><circle cx="17.5" cy="13" r="1" fill="#000" fill-opacity=".35"/>'],
  ["pop","팝업스토어",'<path d="M5 8h14l-1 12H6z" fill="currentColor"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" stroke="currentColor" stroke-width="1.8" fill="none"/>']];
+$("parkLinks").innerHTML=PARKS.map(([n,u,r])=>`<a href="${u}" target="_blank" rel="noopener">${n==="롯데월드"?"롯데월드 어드벤처":n==="레고랜드"?"레고랜드 코리아":n==="오월드"?"대전 오월드":n==="어린이대공원"?"서울어린이대공원":n} <small>${r}</small></a>`).join("");
 $("quick").innerHTML=QUICK.map(([k,l,ic])=>{const c=CATS.find(x=>x.key===k);return `<button class="qt" data-q="${k}" aria-pressed="false" style="--qc:var(${c.color})"><span class="qi"><svg viewBox="0 0 24 24" aria-hidden="true">${ic}</svg></span><b>${l}</b><small></small></button>`}).join("");
 $("quick").addEventListener("click",ev=>{const b=ev.target.closest("[data-q]");if(!b)return;const k=b.dataset.q;
   if(state.cats.size===1&&state.cats.has(k))state.cats.clear();else state.cats=new Set([k]);

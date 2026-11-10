@@ -674,7 +674,7 @@ function card(e){
       <button class="fav" data-fav="${esc(e.id)}" aria-pressed="${fav}">${fav?"♥ 찜함":"♡ 찜하기"}</button>
       ${off?`<a class="offl" href="${esc(off)}" target="_blank" rel="noopener">${e.officialUrl?"공식 사이트":"파크 홈페이지"} ↗</a>`:""}
       <a href="${mapUrl}" target="_blank" rel="noopener">네이버 지도</a>
-      ${src&&src!==off?`<a href="${esc(src)}" target="_blank" rel="noopener">출처 보기</a>`:""}
+      ${src&&src!==off?`<a href="${esc(src.replace(/^https:\/\/korean\.visitkorea\.or\.kr\/detail\/ms_detail\.do\?cotid=&contentId=\d+$/,"https://korean.visitkorea.or.kr/search/search_list.do?keyword="+encodeURIComponent(e.title)))}" target="_blank" rel="noopener">${e.from==="tour"?"관광공사 정보":"출처 보기"}</a>`:""}
       ${e.from==="tour"?`<span class="src">TourAPI</span>`:""}
       ${window.CF_REVIEWS?`<button class="fav" data-rv="${esc(e.id)}" aria-expanded="${state.rvOpen.has(e.id)}">${rvBtnLabel(e)}</button>`:""}
     </div>
@@ -1085,7 +1085,7 @@ $("tourBtn").addEventListener("click",async()=>{
     if(head&&head.resultCode&&head.resultCode!=="0000")throw {code:"api",message:head.resultMsg||head.resultCode};
     if(!data?.response)throw {code:"parse",message:""};
     let items=data?.response?.body?.items?.item||[];if(!Array.isArray(items))items=[items];
-    const out=items.map(it=>({id:"tour-"+it.contentid,contentid:String(it.contentid),img:it.firstimage||"",lic:it.cpyrhtDivCd||"",title:it.title,start:ymd(it.eventstartdate),end:ymd(it.eventenddate),region:regionOf(it.addr1),place:[it.addr1,it.addr2].filter(Boolean).join(" "),category:guessCat(it.title),desc:it.tel?("문의 "+it.tel):"",lat:it.mapy?Number(it.mapy):undefined,lng:it.mapx?Number(it.mapx):undefined,source:"https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=&contentId="+it.contentid,from:"tour"})).filter(e=>e.start&&e.end&&e.end>=T);
+    const out=items.map(it=>({id:"tour-"+it.contentid,contentid:String(it.contentid),img:it.firstimage||"",lic:it.cpyrhtDivCd||"",title:it.title,start:ymd(it.eventstartdate),end:ymd(it.eventenddate),region:regionOf(it.addr1),place:[it.addr1,it.addr2].filter(Boolean).join(" "),category:guessCat(it.title),desc:it.tel?("문의 "+it.tel):"",lat:it.mapy?Number(it.mapy):undefined,lng:it.mapx?Number(it.mapx):undefined,source:"https://korean.visitkorea.or.kr/search/search_list.do?keyword="+encodeURIComponent(it.title),from:"tour"})).filter(e=>e.start&&e.end&&e.end>=T);
     state.tour=out;
     try{localStorage.setItem(LSC,JSON.stringify({at:Date.now(),items:out}))}catch(_){}
     msg.textContent=`${autoLoading?"앱을 열면서 자동으로 ":""}TourAPI에서 진행 중이거나 예정된 축제 ${out.length}건을 불러왔어요. (${new Date().toLocaleString("ko-KR",{month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"})})`;autoLoading=false;

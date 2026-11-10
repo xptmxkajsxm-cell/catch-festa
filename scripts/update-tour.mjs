@@ -47,6 +47,23 @@ async function dims(url) {
   return null;
 }
 
+// 상세정보(공식 홈페이지 주소·소개글) — 실패해도 목록은 그대로 저장
+async function detail(id) {
+  try {
+    const url = "https://apis.data.go.kr/B551011/KorService2/detailCommon2?serviceKey=" + KEY + "&MobileOS=ETC&MobileApp=CatchFesta&_type=json&contentId=" + id;
+    const d = JSON.parse(await (await fetch(url)).text());
+    let it = d?.response?.body?.items?.item; if (Array.isArray(it)) it = it[0];
+    if (!it) return {};
+    const hp = String(it.homepage || "");
+    const m = hp.match(/href=["']?([^"'\s>]+)/i) || hp.match(/https?:\/\/[^\s"'<>]+/i);
+    let home = m ? (m[1] || m[0]) : "";
+    if (home && !/^https?:\/\//i.test(home)) home = "http://" + home;
+    if (/^https?:\/\/(www\.)?(instagram|facebook|blog\.naver|youtube)\./i.test(home)) home = home; // SNS도 공식 채널로 인정
+    const ov = String(it.overview || "").replace(/<[^>]+>/g, " ").replace(/&[a-z]+;/g, " ").replace(/\s+/g, " ").trim();
+    return { home, overview: ov.length > 90 ? ov.slice(0, 88) + "…" : ov };
+  } catch { return {}; }
+}
+
 const all = [];
 let n = 1, total = 1;
 while (all.length < total && n <= 10) { const p = await page(n); total = p.total; all.push(...p.items); if (!p.items.length) break; n++; }
@@ -57,10 +74,13 @@ for (const it of all) {
     id: "tour-" + it.contentid, contentid: String(it.contentid), title: it.title,
     start: ymd(it.eventstartdate), end: ymd(it.eventenddate), region: regionOf(it.addr1),
     place: [it.addr1, it.addr2].filter(Boolean).join(" "), category: guessCat(it.title),
-    desc: it.tel ? "문의 " + it.tel : "", source: "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=&contentId=" + it.contentid, from: "tour"
+    desc: it.tel ? "문의 " + it.tel : "", source: "https://korean.visitkorea.or.kr/search/search_list.do?keyword=" + encodeURIComponent(it.title), from: "tour"
   };
   if (it.mapy && it.mapx) { e.lat = Number(it.mapy); e.lng = Number(it.mapx); }
   if (!e.start || !e.end || e.end < T || !e.region) continue;
+  const det = await detail(it.contentid);
+  if (det.home) e.officialUrl = det.home;
+  if (det.overview) e.desc = det.overview + (it.tel ? " · 문의 " + it.tel : "");
   if (it.firstimage && LICOK[it.cpyrhtDivCd]) {
     const d = await dims(it.firstimage);
     if (d && d.w && d.h >= d.w * 0.9) {

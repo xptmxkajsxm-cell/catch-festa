@@ -128,7 +128,7 @@
   "lng": 126.745,
   "place": "킨텍스 제1전시장 3·4홀",
   "region": "경기",
-  "source": "https://www.topstarnews.net/news/articleView.html?idxno=16269123",
+  "source": "https://sports.khan.co.kr/en/article/202611051510007",
   "start": "2027-01-02",
   "tickets": [
    {
@@ -192,7 +192,8 @@
    }
   ],
   "title": "NCT WISH 2nd Concert Tour 'INTO THE WISH' in SEOUL",
-  "id": "c05"
+  "id": "c05",
+  "officialUrl": "https://weverse.io/nctwish/notice/40039"
  },
  {
   "addedAt": "2026-11-10",
@@ -234,7 +235,7 @@
   "bookSite": "NOL티켓",
   "bookUrl": "https://nol.yanolja.com/ticket/products/26015024",
   "category": "콘서트",
-  "desc": "요네즈 켄시 내한공연 3회 (1/14, 1/16, 1/17)",
+  "desc": "요네즈 켄시 첫 내한 아레나 공연 (1/14·16·17 3회, 15일 공연 없음)",
   "end": "2027-01-17",
   "fee": "paid",
   "feeNote": "플로어 172,000원 · 지정석 143,000~165,000원",
@@ -272,7 +273,7 @@
   "lng": 126.745,
   "place": "킨텍스 제1전시장 4·5홀",
   "region": "경기",
-  "source": "https://weknews.com/maroon5-concert-seoul-2027/",
+  "source": "https://nol.yanolja.com/ticket/products/26011315",
   "start": "2027-01-27",
   "tickets": [
    {
@@ -299,7 +300,7 @@
   "lng": 126.739,
   "place": "킨텍스 제2전시장 10홀",
   "region": "경기",
-  "source": "https://sports.khan.co.kr/article/202607072132003",
+  "source": "https://nol.yanolja.com/ticket/products/26009919",
   "start": "2026-12-05",
   "tickets": [
    {
@@ -312,36 +313,9 @@
    }
   ],
   "title": "칼리드 내한공연 It's Always Summer Somewhere Tour",
-  "id": "c09"
- },
- {
-  "addedAt": "2026-11-10",
-  "bookSite": "티켓링크",
-  "bookUrl": "https://www.ticketlink.co.kr/product/66854",
-  "category": "콘서트",
-  "desc": "김종서 크리스마스 단독 콘서트",
-  "end": "2026-12-25",
-  "fee": "paid",
-  "feeNote": "R석 99,000원",
-  "from": "seed",
-  "lat": 37.551,
-  "lng": 126.941,
-  "place": "서강대학교 메리홀 대극장",
-  "region": "서울",
-  "source": "https://www.make2t.kr/2026/11/kim-jongseo-christmas-concert-seoul-tickets-2026.html",
-  "start": "2026-12-25",
-  "tickets": [
-   {
-    "end": "",
-    "note": "",
-    "start": "2026-11-10",
-    "time": "11:00",
-    "type": "일반예매",
-    "url": "https://www.ticketlink.co.kr/product/66854"
-   }
-  ],
-  "title": "2026 김종서 크리스마스 콘서트 서울",
-  "id": "c10"
+  "id": "c09",
+  "bookUrl": "https://nol.yanolja.com/ticket/products/26009919",
+  "bookSite": "NOL티켓"
  },
  {
   "addedAt": "2026-11-10",
@@ -759,7 +733,7 @@
   "lng": 129.136,
   "place": "벡스코 제1·2전시장",
   "region": "부산",
-  "source": "https://daily.hankooki.com/news/articleView.html?idxno=1401057",
+  "source": "https://zdnet.co.kr/view?no=20261019155338",
   "start": "2026-11-19",
   "tickets": [
    {
@@ -830,7 +804,7 @@
   "lng": 127.066,
   "place": "SETEC 제1·2전시장",
   "region": "서울",
-  "source": "https://www.wikitree.co.kr/articles/1168300",
+  "source": "https://nol.yanolja.com/ticket/products/26014698",
   "start": "2026-12-18",
   "tickets": [
    {
@@ -843,7 +817,9 @@
    }
   ],
   "title": "비버롹스 2026 (BeaverRocks)",
-  "id": "g04"
+  "id": "g04",
+  "bookUrl": "https://nol.yanolja.com/ticket/products/26014698",
+  "bookSite": "NOL티켓"
  },
  {
   "addedAt": "2026-11-10",
@@ -874,26 +850,11 @@
   "lng": 126.77,
   "place": "일산 라페스타 문화의거리",
   "region": "경기",
-  "source": "https://comicw.net/c/424",
+  "source": "https://www.mygoyang.com/news/articleView.html?idxno=91124",
   "start": "2026-11-14",
-  "title": "고양 서브컬처 페스티벌",
-  "id": "g06"
- },
- {
-  "addedAt": "2026-11-10",
-  "category": "서브컬처",
-  "desc": "광주 동인행사 · 부스·코스프레·무대 공연",
-  "end": "2026-11-22",
-  "feeNote": "입장료는 주최측 X(@SKYCHORD_160111) 공지 확인",
-  "from": "seed",
-  "lat": 35.222,
-  "lng": 126.847,
-  "place": "광주디자인진흥원",
-  "region": "광주",
-  "source": "https://comicw.net/c/415",
-  "start": "2026-11-22",
-  "title": "제33회 스카이코드 페스티벌",
-  "id": "g07"
+  "title": "2026 네코비무 고양 서브컬처 페스티벌",
+  "id": "g06",
+  "officialUrl": "https://litt.ly/nekobimu"
  },
  {
   "addedAt": "2026-11-10",
@@ -906,10 +867,11 @@
   "lng": 127.009,
   "place": "DDP 쇼룸 1층",
   "region": "서울",
-  "source": "https://comicw.net/c/410",
+  "source": "https://www.finecharacter.kr/",
   "start": "2026-11-27",
   "title": "파인캐릭터 2026",
-  "id": "g08"
+  "id": "g08",
+  "officialUrl": "https://www.finecharacter.kr/"
  },
  {
   "addedAt": "2026-11-10",
@@ -926,7 +888,8 @@
   "source": "https://www.platoon.co.kr/news/articleView.html?idxno=1731",
   "start": "2026-11-28",
   "title": "제38회 플래툰 컨벤션",
-  "id": "g09"
+  "id": "g09",
+  "officialUrl": "https://www.platoon.co.kr/news/articleView.html?idxno=1731"
  },
  {
   "addedAt": "2026-11-10",
@@ -963,7 +926,8 @@
    }
   ],
   "title": "코믹월드 WINTER 2026",
-  "id": "g10"
+  "id": "g10",
+  "officialUrl": "https://comicw.net/c/421"
  },
  {
   "addedAt": "2026-11-10",
@@ -992,23 +956,8 @@
    }
   ],
   "title": "문구전 2026 겨울",
-  "id": "g11"
- },
- {
-  "addedAt": "2026-11-10",
-  "category": "취업",
-  "desc": "완주군 대규모 지역 일자리박람회",
-  "end": "2026-11-10",
-  "feeNote": "시간·참가방법은 기사 미기재",
-  "from": "seed",
-  "lat": 35.914,
-  "lng": 127.074,
-  "place": "우석대학교 체육관",
-  "region": "전북",
-  "source": "https://m.inews24.com/v/2022073",
-  "start": "2026-11-10",
-  "title": "2026 완주군 일자리박람회",
-  "id": "j01"
+  "id": "g11",
+  "officialUrl": "https://comicw.net/notice_mg/68"
  },
  {
   "addedAt": "2026-11-10",
@@ -1025,22 +974,6 @@
   "start": "2026-11-11",
   "title": "미추홀구 채용박람회 'AI로 잇는 내일(JOB)'",
   "id": "j02"
- },
- {
-  "addedAt": "2026-11-10",
-  "category": "취업",
-  "desc": "14:00부터 구인기업 부스 현장면접",
-  "end": "2026-11-12",
-  "feeNote": "사전등록 없이 당일 참여",
-  "from": "seed",
-  "lat": 34.849,
-  "lng": 128.43,
-  "place": "통영 충무체육관",
-  "region": "경남",
-  "source": "https://gecpo.org/645050",
-  "start": "2026-11-12",
-  "title": "2026 통영시 일자리박람회",
-  "id": "j03"
  },
  {
   "addedAt": "2026-11-10",
@@ -1085,7 +1018,8 @@
    }
   ],
   "title": "AI NEXT CAREER FAIR 2026",
-  "id": "j05"
+  "id": "j05",
+  "officialUrl": "https://groupby.kr/landing/ai-next-career-fair-2026/groupby"
  },
  {
   "addedAt": "2026-11-10",
@@ -1098,9 +1032,9 @@
   "lng": 127.098,
   "place": "롯데호텔월드 3층 에메랄드룸",
   "region": "서울",
-  "source": "https://seoulstart.com/ko/jobs/job-fairs",
+  "source": "https://www.studyinkorea.go.kr/ko/notice/newsRead.do?bbsId=BBSMSTR_000000000431&boardSort=1&nttId=4524",
   "start": "2026-11-17",
-  "title": "KOTRA 글로벌 인재 채용박람회",
+  "title": "외국인 유학생-중견기업 글로벌 인재 채용박람회 (KOTRA)",
   "id": "j06"
  },
  {
@@ -1119,7 +1053,8 @@
   "source": "https://news.seoul.go.kr/welfare/?p=584379",
   "start": "2026-11-18",
   "title": "2026 서울 외국인 취업·채용 박람회",
-  "id": "j07"
+  "id": "j07",
+  "officialUrl": "https://2026seouljobfair.com/"
  },
  {
   "addedAt": "2026-11-10",
@@ -1132,7 +1067,7 @@
   "lng": 129.081,
   "place": "부산대 기계관 국제회의장",
   "region": "부산",
-  "source": "https://seoulstart.com/ko/jobs/job-fairs",
+  "source": "https://gsc.korea.ac.kr/gsc/Life/Career/Career.do?mode=view&articleNo=1587941",
   "start": "2026-11-26",
   "tickets": [
    {
@@ -1174,7 +1109,8 @@
    }
   ],
   "title": "무역의 날 기념 KITA 채용박람회",
-  "id": "j09"
+  "id": "j09",
+  "officialUrl": "https://jobfair.kita.net/2026/user/home.do"
  },
  {
   "addedAt": "2026-11-10",
@@ -1212,7 +1148,8 @@
    }
   ],
   "title": "메가엘레이드 ex SAR GET BATTLE",
-  "id": "k01"
+  "id": "k01",
+  "officialUrl": "https://pokemonkorea.co.kr/PCG_Getbattle_M6/menu830"
  },
  {
   "addedAt": "2026-11-10",
@@ -1270,7 +1207,8 @@
    }
   ],
   "title": "원피스 카드게임 발매기념대회 리미티드 배틀",
-  "id": "k03"
+  "id": "k03",
+  "officialUrl": "https://onepiece-cardgame.kr/events/view.do?brdno=6755"
  },
  {
   "addedAt": "2026-11-10",
@@ -1301,7 +1239,8 @@
    }
   ],
   "title": "원피스 카드게임 WINTER 플래그쉽 배틀 EX",
-  "id": "k04"
+  "id": "k04",
+  "officialUrl": "https://onepiece-cardgame.kr/events/view.do?brdno=6715"
  },
  {
   "addedAt": "2026-11-10",
@@ -1332,7 +1271,8 @@
    }
   ],
   "title": "원피스 카드게임 WINTER 매칭배틀",
-  "id": "k05"
+  "id": "k05",
+  "officialUrl": "https://onepiece-cardgame.kr/events/view.do?brdno=6716"
  },
  {
   "addedAt": "2026-11-10",
@@ -1363,7 +1303,8 @@
    }
   ],
   "title": "원피스 카드게임 WINTER 3on3 CUP",
-  "id": "k06"
+  "id": "k06",
+  "officialUrl": "https://onepiece-cardgame.kr/events/view.do?brdno=6714"
  },
  {
   "addedAt": "2026-11-10",
@@ -1401,7 +1342,8 @@
    }
   ],
   "title": "[12월] 원피스 카드게임 플래그쉽 배틀",
-  "id": "k07"
+  "id": "k07",
+  "officialUrl": "https://onepiece-cardgame.kr/events/view.do?brdno=6710"
  },
  {
   "addedAt": "2026-11-10",
@@ -1431,7 +1373,8 @@
    }
   ],
   "title": "[11월] 원피스 카드게임 교류회",
-  "id": "k08"
+  "id": "k08",
+  "officialUrl": "https://onepiece-cardgame.kr/events/view.do?brdno=6592"
  },
  {
   "addedAt": "2026-11-10",
@@ -1461,7 +1404,8 @@
    }
   ],
   "title": "유희왕 KCS 2026 결승",
-  "id": "k09"
+  "id": "k09",
+  "officialUrl": "https://www.yugioh.co.kr/board/board_info.php?b_category=notice&b_no=402"
  },
  {
   "addedAt": "2026-11-10",
@@ -1493,7 +1437,8 @@
    }
   ],
   "title": "수원 카드플래닛 오리진 스토어 예선",
-  "id": "k10"
+  "id": "k10",
+  "officialUrl": "https://playriftbound.com/ko-KR/events/117567700154830341"
  },
  {
   "addedAt": "2026-11-10",
@@ -1523,7 +1468,8 @@
    }
   ],
   "title": "리프트바운드: 오리진 코리아 메이저",
-  "id": "k11"
+  "id": "k11",
+  "officialUrl": "https://playriftbound.com/ko-kr/news/announcements/kr-origin-op-notice/"
  },
  {
   "addedAt": "2026-11-09",
@@ -1553,33 +1499,6 @@
   ],
   "title": "카운트다운 판타지 2026-2027",
   "id": "m01"
- },
- {
-  "addedAt": "2026-11-09",
-  "category": "음악",
-  "desc": "연말 실내에서 사흘 동안 열리는 록 페스티벌",
-  "end": "2026-12-20",
-  "fee": "paid",
-  "feeNote": "1일권 77,000원 · 2일권 119,000원 · 3일권 129,000원",
-  "from": "seed",
-  "lat": 37.388,
-  "lng": 126.643,
-  "place": "송도컨벤시아",
-  "region": "인천",
-  "source": "https://festivallife.kr/festival/?idx=175290766&bmode=view",
-  "start": "2026-12-18",
-  "tickets": [
-   {
-    "end": "",
-    "note": "멜론티켓",
-    "start": "2026-10-28",
-    "time": "14:00",
-    "type": "사전예매",
-    "url": "https://festivallife.kr/festival/?idx=175290766&bmode=view"
-   }
-  ],
-  "title": "히어로 락 페스티벌 2026 인천",
-  "id": "m02"
  },
  {
   "addedAt": "2026-11-09",
@@ -1624,7 +1543,7 @@
   "lng": 126.867,
   "place": "고척스카이돔",
   "region": "서울",
-  "source": "https://www.wikitree.co.kr/articles/1167304",
+  "source": "https://m.etnews.com/20260609000387",
   "start": "2026-11-14",
   "tickets": [
    {
@@ -1658,7 +1577,7 @@
   "lng": 126.745,
   "place": "킨텍스",
   "region": "경기",
-  "source": "https://www.slist.kr/news/articleView.html?idxno=774894",
+  "source": "https://isplus.com/article/view/isp202610010202",
   "start": "2026-12-24",
   "title": "2026 SBS 가요대전",
   "id": "m05"
@@ -1673,12 +1592,14 @@
   "from": "seed",
   "lat": 35.187,
   "lng": 128.087,
-  "place": "경남문화예술회관 및 진주시 일원",
+  "place": "경남문화예술회관 대공연장",
   "region": "경남",
-  "source": "https://www.shinailbo.co.kr/news/articleView.html?idxno=5080100",
-  "start": "2026-12-01",
+  "source": "https://nol.yanolja.com/ticket/products/26015208",
+  "start": "2026-12-04",
   "title": "2026 진주국제재즈페스티벌",
-  "id": "m06"
+  "id": "m06",
+  "bookUrl": "https://nol.yanolja.com/ticket/products/26015208",
+  "bookSite": "NOL티켓"
  },
  {
   "addedAt": "2026-11-09",
@@ -1694,7 +1615,7 @@
   "lng": 126.976,
   "place": "세종문화회관 대극장",
   "region": "서울",
-  "source": "https://spotts.kr/f/concert-2026-diana-krall-seoul",
+  "source": "https://mediawatch.kr/news/article.html?no=260581",
   "start": "2026-11-22",
   "tickets": [
    {
@@ -1784,37 +1705,6 @@
  },
  {
   "addedAt": "2026-11-09",
-  "bookSite": "네이버 예약",
-  "bookUrl": "https://booking.naver.com/booking/5/bizes/1766153",
-  "category": "DJ",
-  "desc": "금토일 크리스마스 마켓, 라운지에서 DJ 셋과 재즈·시티팝 공연",
-  "end": "2026-12-20",
-  "fee": "paid",
-  "feeNote": "현장 1일권 10,000원 (미취학 무료)",
-  "from": "seed",
-  "imageCredit": "사진: 한국관광공사 · 공공누리 3유형",
-  "imageFit": "contain",
-  "lat": 37.474,
-  "lng": 126.617,
-  "place": "인천 상상플랫폼",
-  "region": "인천",
-  "source": "https://spotts.kr/f/festival-2026-ohslow-vintage-christmas-market",
-  "start": "2026-12-04",
-  "tickets": [
-   {
-    "end": "2026-11-30",
-    "note": "1일권 5,000원 (50% 할인)",
-    "start": "2026-11-02",
-    "type": "얼리버드",
-    "url": "https://spotts.kr/f/festival-2026-ohslow-vintage-christmas-market"
-   }
-  ],
-  "title": "오슬로우 빈티지 크리스마스 마켓",
-  "id": "m11",
-  "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/24/4136124_image2_1.jpg"
- },
- {
-  "addedAt": "2026-11-09",
   "bookSite": "NOL티켓",
   "bookUrl": "https://nol.yanolja.com/ticket/products/26014860",
   "category": "DJ",
@@ -1846,7 +1736,7 @@
   "lng": 126.745,
   "place": "킨텍스 제1전시장 2~5홀",
   "region": "경기",
-  "source": "https://k-calc.com/events/megazoo-ilsan",
+  "source": "https://megazoo.co.kr/",
   "start": "2026-11-20",
   "tickets": [
    {
@@ -1859,7 +1749,8 @@
    }
   ],
   "title": "2026 메가주 일산 시즌2",
-  "id": "p01"
+  "id": "p01",
+  "officialUrl": "https://megazoo.co.kr/"
  },
  {
   "addedAt": "2026-11-10",
@@ -1875,7 +1766,7 @@
   "lng": 129.137,
   "place": "벡스코 제2전시장 4홀",
   "region": "부산",
-  "source": "https://k-calc.com/events/kpetfair-busan",
+  "source": "https://k-pet.co.kr/information/exhibition-scheduled-all/26pet_busan2/",
   "start": "2026-12-11",
   "tickets": [
    {
@@ -1888,7 +1779,8 @@
    }
   ],
   "title": "2026 케이펫페어 부산 시즌2",
-  "id": "p02"
+  "id": "p02",
+  "officialUrl": "https://k-pet.co.kr/information/exhibition-scheduled-all/26pet_busan2/"
  },
  {
   "addedAt": "2026-11-10",
@@ -1906,7 +1798,8 @@
   "source": "https://gdppcat.com/mypage/notice_detail/139",
   "start": "2026-12-04",
   "title": "제41회 궁디팡팡 캣페스타 서울",
-  "id": "p03"
+  "id": "p03",
+  "officialUrl": "https://gdppcat.com/mypage/notice_detail/139"
  },
  {
   "addedAt": "2026-11-10",
@@ -1922,7 +1815,8 @@
   "source": "https://www.setec.or.kr/front/schedule/list.do?pageIndex=1",
   "start": "2026-12-11",
   "title": "2026 크리스마스 서울펫쇼",
-  "id": "p04"
+  "id": "p04",
+  "officialUrl": "https://www.setec.or.kr/front/schedule/list.do?pageIndex=1"
  },
  {
   "addedAt": "2026-11-10",
@@ -1938,7 +1832,8 @@
   "source": "https://ilovepets.co.kr/board/view.php?id=sub12_0&uniq=14",
   "start": "2026-12-18",
   "title": "2026 PET&MORE 수원 반려동물 박람회",
-  "id": "p05"
+  "id": "p05",
+  "officialUrl": "https://ilovepets.co.kr/board/view.php?id=sub12_0&uniq=14"
  },
  {
   "addedAt": "2026-11-10",
@@ -1967,7 +1862,8 @@
    }
   ],
   "title": "마이펫페어 일산①",
-  "id": "p06"
+  "id": "p06",
+  "officialUrl": "https://www.mypetfair.co.kr/mypetfairticket"
  },
  {
   "addedAt": "2026-11-10",
@@ -1993,23 +1889,8 @@
    }
   ],
   "title": "2026 대전펫페어",
-  "id": "p07"
- },
- {
-  "addedAt": "2026-11-10",
-  "category": "반려동물",
-  "desc": "전북 군산 반려동물 박람회",
-  "end": "2026-11-15",
-  "feeNote": "입장료 정보 없음",
-  "from": "seed",
-  "lat": 35.953,
-  "lng": 126.616,
-  "place": "군산새만금컨벤션센터(GSCO)",
-  "region": "전북",
-  "source": "https://pickcare.co.kr/peteventhub",
-  "start": "2026-11-13",
-  "title": "2026 전북 펫친소",
-  "id": "p08"
+  "id": "p07",
+  "officialUrl": "https://www.d-petfair.co.kr/"
  },
  {
   "addedAt": "2026-11-10",
@@ -2047,22 +1928,6 @@
  {
   "addedAt": "2026-11-10",
   "category": "반려동물",
-  "desc": "레트로 펫 기차여행 콘셉트 반려동물 문화교실",
-  "end": "2026-11-14",
-  "feeNote": "사전등록제 (가평군 반려동물 문화교실 홈페이지)",
-  "from": "seed",
-  "lat": 37.817,
-  "lng": 127.514,
-  "place": "가평 음악역1939 잔디광장",
-  "region": "경기",
-  "source": "https://www.yahopet.co.kr/2026/11/gapyeong-county-pet-culture-class-myeongchunseon1939.html",
-  "start": "2026-11-14",
-  "title": "가평 반려동물 문화교실 '멍춘선1939'",
-  "id": "p11"
- },
- {
-  "addedAt": "2026-11-10",
-  "category": "반려동물",
   "desc": "부천시 반려견 순찰대와 펫티켓 문화교실",
   "end": "2026-11-15",
   "fee": "free",
@@ -2078,22 +1943,6 @@
   "id": "p12"
  },
  {
-  "addedAt": "2026-11-10",
-  "category": "반려동물",
-  "desc": "'우리집 댕냥이의 감정 신호등' 주제 축제 · 유기견 입양 홍보",
-  "end": "2026-11-14",
-  "feeNote": "참가비 미기재 · 10:00~16:00",
-  "from": "seed",
-  "lat": 35.231,
-  "lng": 128.678,
-  "place": "창원 용지공원 일원",
-  "region": "경남",
-  "source": "https://supple.kr/news/cmv32ljc8000mycu5kvdroszm",
-  "start": "2026-11-14",
-  "title": "제6회 창원 반려동물 문화축제",
-  "id": "p13"
- },
- {
   "addedAt": "2026-11-09",
   "category": "축제",
   "desc": "부처별 할인 행사를 묶은 대규모 세일 축제",
@@ -2106,16 +1955,17 @@
   "lng": 128.8,
   "place": "안동시 경동로 684",
   "region": "경북",
-  "source": "https://chukjemoa.co.kr/2026-11/",
+  "source": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?cmsCntntsId=4134331",
   "start": "2026-10-29",
   "title": "코리아 그랜드 페스티벌",
-  "id": "s01"
+  "id": "s01",
+  "officialUrl": "https://xn--2i0bs4klockyciufozlkwe0my1nh7ub.kr/"
  },
  {
   "addedAt": "2026-11-09",
   "category": "불꽃",
   "desc": "국제 불꽃쇼, 드론 라이트쇼, 거리 퍼레이드가 열리는 빛 축제",
-  "end": "2026-11-22",
+  "end": "2026-11-21",
   "fee": "free",
   "feeNote": "무료",
   "feeSource": "https://www.ktriptips.com/kor/festival/588175",
@@ -2124,13 +1974,14 @@
   "imageFit": "contain",
   "lat": 36.06,
   "lng": 129.38,
-  "place": "포항시 북구 영일대 해수욕장 일원",
+  "place": "포항 영일대해수욕장·송도 일원",
   "region": "경북",
-  "source": "https://recomarea.com/festival/FestivalMain?month=11",
-  "start": "2026-11-20",
+  "source": "https://www.kbmaeil.com/article/20261027500411",
+  "start": "2026-11-19",
   "title": "포항국제불빛축제",
   "id": "s02",
-  "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/51/4130851_image2_1.jpg"
+  "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/51/4130851_image2_1.jpg",
+  "officialUrl": "https://phcf.or.kr/"
  },
  {
   "addedAt": "2026-11-09",
@@ -2147,7 +1998,7 @@
   "lng": 129.37,
   "place": "포항시 북구 동빈문화창고1969 일원",
   "region": "경북",
-  "source": "https://chukjemoa.co.kr/2026-11/",
+  "source": "https://kbmaeil.com/article/20261018500697",
   "start": "2026-10-24",
   "title": "포항스틸아트페스티벌(2026PSAF)",
   "id": "s03",
@@ -2166,79 +2017,10 @@
   "lng": 129.56,
   "place": "포항시 남구 호미곶 해맞이광장",
   "region": "경북",
-  "source": "https://recomarea.com/festival/FestivalMain?month=12",
+  "source": "https://kbmaeil.com/article/20261103500357",
   "start": "2026-12-31",
   "title": "호미곶한민족해맞이축전",
   "id": "s04"
- },
- {
-  "addedAt": "2026-11-09",
-  "category": "빛·겨울",
-  "desc": "산타썰매와 크리스마스 우체통이 있는 겨울 산타마을",
-  "end": "2027-02-14",
-  "fee": "free",
-  "feeNote": "입장 무료 (작년 기준, 체험 요금 별도일 수 있음)",
-  "feeSource": "https://xn--ok0b236bp0a.com/place/25079",
-  "from": "seed",
-  "lat": 36.93,
-  "lng": 129.05,
-  "place": "봉화군 소천면 분천역",
-  "region": "경북",
-  "source": "https://recomarea.com/festival/FestivalMain?month=12",
-  "start": "2026-12-19",
-  "title": "한겨울 분천 산타마을 축제",
-  "id": "s05"
- },
- {
-  "addedAt": "2026-11-09",
-  "category": "축제",
-  "desc": "분청도자기 전시·판매와 체험을 함께하는 도자기 축제",
-  "end": "2026-11-10",
-  "from": "seed",
-  "imageCredit": "사진: 한국관광공사 · 공공누리 3유형",
-  "imageFit": "contain",
-  "lat": 35.19,
-  "lng": 128.8,
-  "place": "김해시 장유로 551 롯데가든파크",
-  "region": "경남",
-  "source": "https://recomarea.com/festival/FestivalMain?month=11",
-  "start": "2026-11-06",
-  "title": "김해분청도자기축제",
-  "id": "s06",
-  "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/49/3546549_image2_1.jpg"
- },
- {
-  "addedAt": "2026-11-09",
-  "category": "꽃",
-  "desc": "가을꽃 전시 중심으로 운영하는 꽃 축제",
-  "end": "2026-11-22",
-  "fee": "free",
-  "feeNote": "무료 (작년 기준)",
-  "feeSource": "https://koreatriptips.com/en/festivals-events-performances/1855437.html",
-  "from": "seed",
-  "lat": 34.85,
-  "lng": 128.59,
-  "place": "거제시 거제면 농업기술센터 일원",
-  "region": "경남",
-  "source": "https://chukjemoa.co.kr/2026-11/",
-  "start": "2026-11-09",
-  "title": "거제 섬꽃축제",
-  "id": "s07"
- },
- {
-  "addedAt": "2026-11-09",
-  "category": "빛·겨울",
-  "desc": "동외광장에서 열리는 겨울 빛 전시",
-  "end": "2027-01-31",
-  "from": "seed",
-  "lat": 34.97,
-  "lng": 128.32,
-  "place": "고성군 고성읍 동외광장",
-  "region": "경남",
-  "source": "https://recomarea.com/festival/FestivalMain?month=12",
-  "start": "2026-11-25",
-  "title": "빛으로 만나는 문화축제",
-  "id": "s08"
  },
  {
   "addedAt": "2026-11-09",
@@ -2255,65 +2037,12 @@
   "lng": 127.22,
   "place": "천안시 독립기념관",
   "region": "충남",
-  "source": "https://chukjemoa.co.kr/2026-11/",
+  "source": "https://korean.visitkorea.or.kr/kfes/detail/fstvlDetail.do?cmsCntntsId=2563387",
   "start": "2026-10-15",
   "title": "단풍나무숲길 힐링축제",
   "id": "s09",
-  "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/58/4132358_image2_1.png"
- },
- {
-  "addedAt": "2026-11-09",
-  "category": "꽃",
-  "desc": "국화 전시와 체험을 즐기는 가을 축제",
-  "end": "2026-11-15",
-  "fee": "free",
-  "feeNote": "무료 (이전 행사 기준)",
-  "feeSource": "https://koreatriptips.com/en/festivals-events-performances/1844272.html",
-  "from": "seed",
-  "lat": 36.78,
-  "lng": 126.55,
-  "place": "서산시 고북면 한농원 일원",
-  "region": "충남",
-  "source": "https://recomarea.com/festival/FestivalMain?month=11",
-  "start": "2026-11-06",
-  "title": "서산국화축제",
-  "id": "s10"
- },
- {
-  "addedAt": "2026-11-09",
-  "category": "먹거리",
-  "desc": "지역 특산 곶감 먹거리·특산물 축제",
-  "end": "2026-12-13",
-  "fee": "free",
-  "feeNote": "무료 (작년 기준)",
-  "feeSource": "https://www.ktriptips.com/kor/festival/1139979",
-  "from": "seed",
-  "lat": 36.14,
-  "lng": 127.23,
-  "place": "논산시 양촌면 양촌체육공원",
-  "region": "충남",
-  "source": "https://recomarea.com/festival/FestivalMain?month=12",
-  "start": "2026-12-11",
-  "title": "양촌곶감축제",
-  "id": "s11"
- },
- {
-  "addedAt": "2026-11-09",
-  "category": "먹거리",
-  "desc": "대추와 농특산물 판매, 공연과 체험이 있는 가을 축제",
-  "end": "2026-11-25",
-  "fee": "free",
-  "feeNote": "무료",
-  "feeSource": "https://mom-mom.net/travel/places/6aa7a355502611a53198a6ea",
-  "from": "seed",
-  "lat": 36.49,
-  "lng": 127.73,
-  "place": "보은군 뱃들공원 및 속리산 일원",
-  "region": "충북",
-  "source": "https://recomarea.com/festival/FestivalMain?month=11",
-  "start": "2026-10-16",
-  "title": "보은대추축제",
-  "id": "s12"
+  "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/58/4132358_image2_1.png",
+  "officialUrl": "https://i815.or.kr/2018/news/news.do?mode=V&no=997450&key_bbs_cd=news"
  },
  {
   "addedAt": "2026-11-09",
@@ -2328,31 +2057,10 @@
   "lng": 127.14,
   "place": "순창군 순창전통고추장민속마을 일원",
   "region": "전북",
-  "source": "https://recomarea.com/festival/FestivalMain?month=11",
+  "source": "https://www.koreadaily.com/article/20261105070510708",
   "start": "2026-11-21",
   "title": "순창 KOREA 떡볶이 페스타",
   "id": "s13"
- },
- {
-  "addedAt": "2026-11-09",
-  "category": "문화",
-  "desc": "전라감영을 배경으로 한 참여형 역사 체험",
-  "end": "2026-11-29",
-  "fee": "free",
-  "feeNote": "무료 (금·토·일 운영)",
-  "feeSource": "https://www.ktriptips.com/kor/festival/3468240",
-  "from": "seed",
-  "imageCredit": "사진: 한국관광공사 · 공공누리 3유형",
-  "imageFit": "contain",
-  "lat": 35.82,
-  "lng": 127.15,
-  "place": "전주시 완산구 전라감영",
-  "region": "전북",
-  "source": "https://chukjemoa.co.kr/2026-11/",
-  "start": "2026-10-18",
-  "title": "전라관찰사의 탄생",
-  "id": "s14",
-  "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/62/4123062_image2_1.jpg"
  },
  {
   "addedAt": "2026-11-09",
@@ -2367,46 +2075,10 @@
   "lng": 127.25,
   "place": "고흥군 풍양면 한동리 일원",
   "region": "전남",
-  "source": "https://chukjemoa.co.kr/2026-11/",
+  "source": "https://www.news-wa.com/amp/travel/tour-korea/2026/11/06/20261106500020",
   "start": "2026-11-12",
   "title": "고흥유자축제",
   "id": "s15"
- },
- {
-  "addedAt": "2026-11-09",
-  "category": "빛·겨울",
-  "desc": "크리스마스 테마 체험과 전시·공연",
-  "end": "2026-11-22",
-  "fee": "free",
-  "feeNote": "무료 (작년 기준)",
-  "feeSource": "https://xn--ok0b236bp0a.com/place/28618",
-  "from": "seed",
-  "lat": 35.06,
-  "lng": 126.99,
-  "place": "화순군 남산공원 일원",
-  "region": "전남",
-  "source": "https://recomarea.com/festival/FestivalMain?month=11",
-  "start": "2026-11-20",
-  "title": "2026 미리미리 크리스마스",
-  "id": "s16"
- },
- {
-  "addedAt": "2026-11-09",
-  "category": "빛·겨울",
-  "desc": "땅끝음악회와 체험, 먹거리를 함께하는 해맞이 축제",
-  "end": "2027-01-01",
-  "fee": "free",
-  "feeNote": "입장 무료, 일부 프로그램 유료 (작년 기준)",
-  "feeSource": "https://xn--ok0b236bp0a.com/place/3592",
-  "from": "seed",
-  "lat": 34.3,
-  "lng": 126.53,
-  "place": "해남군 송지면 땅끝마을 일원",
-  "region": "전남",
-  "source": "https://recomarea.com/festival/FestivalMain?month=12",
-  "start": "2026-12-31",
-  "title": "해남 해넘이해맞이축제",
-  "id": "s17"
  },
  {
   "addedAt": "2026-11-09",
@@ -2419,66 +2091,12 @@
   "from": "seed",
   "lat": 37.89,
   "lng": 126.74,
-  "place": "파주시 임진각광장",
+  "place": "파주 임진각관광지·평화누리공원 일원",
   "region": "경기",
-  "source": "https://recomarea.com/festival/FestivalMain?month=11",
+  "source": "https://www.localnaeil.com/News/View/654968",
   "start": "2026-11-27",
   "title": "파주장단콩축제",
   "id": "s18"
- },
- {
-  "addedAt": "2026-11-09",
-  "category": "불꽃",
-  "desc": "호수공원 불꽃쇼와 빛 조형물 전시",
-  "end": "2026-12-31",
-  "fee": "free",
-  "feeNote": "무료",
-  "feeSource": "https://www.ktriptips.com/kor/festival/2789700",
-  "from": "seed",
-  "lat": 37.72,
-  "lng": 126.75,
-  "place": "파주시 운정호수공원",
-  "region": "경기",
-  "source": "https://recomarea.com/festival/FestivalMain?month=11",
-  "start": "2026-10-31",
-  "title": "운정호수공원 불꽃축제",
-  "id": "s19"
- },
- {
-  "addedAt": "2026-11-09",
-  "category": "문화",
-  "desc": "강원도의 전통문화를 소개하는 축제",
-  "end": "2026-11-28",
-  "fee": "free",
-  "feeNote": "무료",
-  "feeSource": "https://xn--ok0b236bp0a.com/place/26937",
-  "from": "seed",
-  "lat": 37.75,
-  "lng": 128.9,
-  "place": "강릉시 단오장길 1",
-  "region": "강원",
-  "source": "https://chukjemoa.co.kr/2026-11/",
-  "start": "2026-11-26",
-  "title": "단단단페스티벌",
-  "id": "s20"
- },
- {
-  "addedAt": "2026-11-09",
-  "category": "축제",
-  "desc": "공연과 먹거리, 체험 부스를 운영하는 항구 축제",
-  "end": "2026-11-22",
-  "fee": "free",
-  "feeNote": "무료 (작년 기준)",
-  "feeSource": "https://xn--ok0b236bp0a.com/place/28240",
-  "from": "seed",
-  "lat": 37.55,
-  "lng": 129.12,
-  "place": "동해시 묵호항 여객선터미널 일대",
-  "region": "강원",
-  "source": "https://chukjemoa.co.kr/2026-11/",
-  "start": "2026-11-21",
-  "title": "묵호 도째비페스타",
-  "id": "s21"
  },
  {
   "addedAt": "2026-11-09",
@@ -2493,9 +2111,9 @@
   "from": "seed",
   "lat": 37.556,
   "lng": 126.98,
-  "place": "중구 남산 백범광장 일원",
+  "place": "남산공원 일대 (백범광장·팔각정)",
   "region": "서울",
-  "source": "https://chukjemoa.co.kr/2026-11/",
+  "source": "https://mediahub.seoul.go.kr/archives/2019615",
   "start": "2026-10-23",
   "tickets": [
    {
@@ -2529,30 +2147,12 @@
   "from": "seed",
   "lat": 37.468,
   "lng": 127.04,
-  "place": "서초구 aT센터 (강남대로 27)",
+  "place": "aT센터 제1전시장",
   "region": "서울",
-  "source": "https://chukjemoa.co.kr/2026-11/",
+  "source": "https://www.specialtimes.co.kr/news/articleView.html?idxno=482350",
   "start": "2026-11-13",
   "title": "대한민국 우리술 대축제",
   "id": "s23"
- },
- {
-  "addedAt": "2026-11-09",
-  "category": "문화",
-  "desc": "무형유산과 전통 민속을 공연·체험으로 소개",
-  "end": "2026-11-15",
-  "fee": "free",
-  "feeNote": "무료",
-  "feeSource": "https://xn--ok0b236bp0a.com/place/27667",
-  "from": "seed",
-  "lat": 35.168,
-  "lng": 129.057,
-  "place": "부산진구 부산시민공원",
-  "region": "부산",
-  "source": "https://chukjemoa.co.kr/2026-11/",
-  "start": "2026-11-15",
-  "title": "부산종합민속예술제",
-  "id": "s24"
  },
  {
   "addedAt": "2026-11-09",
@@ -2569,7 +2169,7 @@
   "lng": 129.127,
   "place": "해운대구 영화의전당 일원",
   "region": "부산",
-  "source": "https://chukjemoa.co.kr/2026-11/",
+  "source": "https://english.visitkorea.or.kr/enu/ATR/SI_EN_3_2_1.jsp?cid=3437916",
   "start": "2026-11-26",
   "tickets": [
    {
@@ -2581,25 +2181,8 @@
    }
   ],
   "title": "크리스마스 빌리지 부산 2026",
-  "id": "s25"
- },
- {
-  "addedAt": "2026-11-09",
-  "category": "빛·겨울",
-  "desc": "크리스마스트리 장식과 점등식이 있는 겨울 빛 축제",
-  "end": "2027-01-31",
-  "fee": "free",
-  "feeNote": "무료 (작년 기준)",
-  "feeSource": "https://xn--ok0b236bp0a.com/place/29122",
-  "from": "seed",
-  "lat": 35.099,
-  "lng": 129.033,
-  "place": "중구 광복로 일원",
-  "region": "부산",
-  "source": "https://recomarea.com/festival/FestivalMain?month=12",
-  "start": "2026-12-04",
-  "title": "광복로겨울빛트리축제",
-  "id": "s26"
+  "id": "s25",
+  "officialUrl": "https://marketchango.com"
  },
  {
   "addedAt": "2026-11-09",
@@ -2612,9 +2195,9 @@
   "from": "seed",
   "lat": 35.83,
   "lng": 128.62,
-  "place": "수성구 무학로 112 (두산동)",
+  "place": "수성못 상화동산 일원",
   "region": "대구",
-  "source": "https://chukjemoa.co.kr/2026-11/",
+  "source": "https://www.inews24.com/view/2017357",
   "start": "2026-10-27",
   "title": "수성국제비엔날레",
   "id": "s27"
@@ -2630,12 +2213,13 @@
   "from": "seed",
   "lat": 37.45,
   "lng": 126.7,
-  "place": "남동구 인천문화예술회관",
+  "place": "인천종합문화예술회관",
   "region": "인천",
-  "source": "https://chukjemoa.co.kr/2026-11/",
+  "source": "https://english.visitkorea.or.kr/enu/ATR/SI_EN_3_2_1.jsp?cid=1129018",
   "start": "2026-11-20",
   "title": "인천국제디자인페어(INDEF)",
-  "id": "s28"
+  "id": "s28",
+  "officialUrl": "https://indef.kr/"
  },
  {
   "addedAt": "2026-11-09",
@@ -2650,25 +2234,10 @@
   "lng": 126.9,
   "place": "서구 양동시장 일원",
   "region": "광주",
-  "source": "https://chukjemoa.co.kr/2026-11/",
+  "source": "https://english.visitkorea.or.kr/enu/ATR/SI_EN_3_2_1.jsp?cid=4142164",
   "start": "2026-11-12",
   "title": "양동 백투더 장 홍탁페스타",
   "id": "s29"
- },
- {
-  "addedAt": "2026-11-09",
-  "category": "빛·겨울",
-  "desc": "트리 점화식과 거리 퍼레이드, 크리스마스 공연",
-  "end": "2026-12-31",
-  "from": "seed",
-  "lat": 35.137,
-  "lng": 126.913,
-  "place": "남구 양림오거리·우일선선교사사택",
-  "region": "광주",
-  "source": "https://recomarea.com/festival/FestivalMain?month=12",
-  "start": "2026-12-01",
-  "title": "양림 크리스마스 문화축제",
-  "id": "s30"
  },
  {
   "addedAt": "2026-11-09",
@@ -2681,9 +2250,9 @@
   "from": "seed",
   "lat": 36.31,
   "lng": 127.42,
-  "place": "중구 계룡로904번길 30 (문화동)",
+  "place": "서대전시민광장",
   "region": "대전",
-  "source": "https://chukjemoa.co.kr/2026-11/",
+  "source": "https://www.specialtimes.co.kr/news/articleView.html?idxno=482346",
   "start": "2026-11-13",
   "title": "누들대전축제",
   "id": "s31"
@@ -2699,9 +2268,9 @@
   "from": "seed",
   "lat": 36.49,
   "lng": 127.27,
-  "place": "세종 중앙공원",
+  "place": "세종중앙공원 도시축제마당",
   "region": "세종",
-  "source": "https://chukjemoa.co.kr/2026-11/",
+  "source": "https://english.visitkorea.or.kr/enu/ATR/SI_EN_3_2_1.jsp?cid=4137577",
   "start": "2026-11-14",
   "title": "국민건강 리부트 마음건강 걷기대회",
   "id": "s32"
@@ -2717,45 +2286,12 @@
   "from": "seed",
   "lat": 35.55,
   "lng": 129.14,
-  "place": "울주군 삼남읍 울산역 일원",
+  "place": "울산전시컨벤션센터(UECO)",
   "region": "울산",
-  "source": "https://chukjemoa.co.kr/2026-11/",
+  "source": "https://www.ksilbo.co.kr/news/articleView.html?idxno=1071391",
   "start": "2026-11-26",
   "title": "울산문화박람회",
   "id": "s33"
- },
- {
-  "addedAt": "2026-11-09",
-  "category": "꽃",
-  "desc": "제주에서 처음 열리는 정원문화박람회",
-  "end": "2026-11-10",
-  "fee": "free",
-  "feeNote": "무료",
-  "feeSource": "https://www.ktriptips.com/kor/festival/4114621",
-  "from": "seed",
-  "lat": 33.26,
-  "lng": 126.52,
-  "place": "서귀포시 서호동",
-  "region": "제주",
-  "source": "https://chukjemoa.co.kr/2026-11/",
-  "start": "2026-11-06",
-  "title": "대한민국 제주정원문화박람회",
-  "id": "s34"
- },
- {
-  "addedAt": "2026-11-09",
-  "category": "문화",
-  "desc": "음악·댄스·마술 거리 공연",
-  "end": "2026-11-13",
-  "from": "seed",
-  "lat": 33.51,
-  "lng": 126.52,
-  "place": "제주시 칠성로상점가·누웨마루 거리",
-  "region": "제주",
-  "source": "https://recomarea.com/festival/FestivalMain?month=11",
-  "start": "2026-09-04",
-  "title": "제주 거리예술제",
-  "id": "s35"
  },
  {
   "addedAt": "2026-11-09",
@@ -2772,7 +2308,7 @@
   "lng": 126.745,
   "place": "고양시 일산 킨텍스 제1전시장",
   "region": "경기",
-  "source": "https://zdnet.co.kr/view/?no=20260619135933",
+  "source": "https://www.gamemeca.com/en/view.php?gid=1776731",
   "start": "2026-12-04",
   "tickets": [
    {
@@ -2815,9 +2351,9 @@
   "from": "seed",
   "lat": 35.169,
   "lng": 129.136,
-  "place": "해운대구 벡스코 (APEC로 30)",
+  "place": "벡스코 제2전시장",
   "region": "부산",
-  "source": "https://chukjemoa.co.kr/2026-11/",
+  "source": "https://www.kocca.kr/kocca/koccanews/reportview.do?nttNo=1232",
   "start": "2026-11-19",
   "tickets": [
    {
@@ -2829,8 +2365,9 @@
     "url": "https://tali.kr/gstar-2026-tickets"
    }
   ],
-  "title": "게임문화축제",
-  "id": "s37"
+  "title": "2026 게임문화축제",
+  "id": "s37",
+  "officialUrl": "https://www.kgcf.kr"
  },
  {
   "addedAt": "2026-11-09",
@@ -2845,7 +2382,7 @@
   "lng": 127.07,
   "place": "강남구 SETEC (남부순환로 3104)",
   "region": "서울",
-  "source": "https://chukjemoa.co.kr/2026-11/",
+  "source": "https://www.setec.or.kr/front/schedule/list.do?pageIndex=1",
   "start": "2026-11-21",
   "tickets": [
    {
@@ -2856,7 +2393,7 @@
     "url": "https://xn--ok0b236bp0a.com/place/3309"
    }
   ],
-  "title": "보드게임페스타 시즌2",
+  "title": "2026 보드게임페스타",
   "id": "s38"
  },
  {
@@ -2867,9 +2404,9 @@
   "from": "seed",
   "lat": 37.526,
   "lng": 126.928,
-  "place": "영등포구 더현대 서울 지하1층",
+  "place": "더현대 서울 B1",
   "region": "서울",
-  "source": "https://www.make2t.kr/2026/11/2026-yonex-yeouido-open-the-hyundai-seoul-guide.html",
+  "source": "https://www.segye.com/newsView/20261104506866",
   "start": "2026-11-12",
   "tickets": [
    {
@@ -2880,23 +2417,8 @@
     "url": "https://www.segye.com/newsView/20261104506866"
    }
   ],
-  "title": "요넥스 더현대 서울 팝업스토어",
+  "title": "YONEX YEOUIDO OPEN 팝업스토어",
   "id": "s39"
- },
- {
-  "addedAt": "2026-11-09",
-  "category": "팝업",
-  "desc": "어린이 바자회와 먹거리 팝업 스토어",
-  "end": "2026-11-15",
-  "from": "seed",
-  "lat": 36.12,
-  "lng": 128.11,
-  "place": "김천시 평화시장",
-  "region": "경북",
-  "source": "https://recomarea.com/festival/FestivalMain?month=11",
-  "start": "2026-11-14",
-  "title": "꼬마상인 플리마켓 & 평화 먹거리 팝업",
-  "id": "s40"
  },
  {
   "addedAt": "2026-11-09",
@@ -2909,9 +2431,9 @@
   "from": "seed",
   "lat": 34.95,
   "lng": 127.49,
-  "place": "순천시 남내동 일원",
+  "place": "순천 별미길 일대 (남내동)",
   "region": "전남",
-  "source": "https://chukjemoa.co.kr/2026-11/",
+  "source": "https://english.visitkorea.or.kr/enu/ATR/SI_EN_3_2_1.jsp?cid=4147845",
   "start": "2026-11-14",
   "title": "순천 올랑가 일일마켓",
   "id": "s41"
@@ -2928,10 +2450,11 @@
   "lng": 127.098,
   "place": "롯데월드 어드벤처 (잠실)",
   "region": "서울",
-  "source": "https://www.ajunews.com/view/20261109172351422",
+  "source": "https://www.inews24.com/view/2023842",
   "start": "2026-11-21",
   "title": "쿠키런 X 롯데월드 : 스위트 윈터 어드벤처",
-  "id": "t01"
+  "id": "t01",
+  "officialUrl": "https://adventure.lotteworld.com/kor/main/index.do"
  },
  {
   "addedAt": "2026-11-10",
@@ -2945,10 +2468,11 @@
   "lng": 129.213,
   "place": "롯데월드 어드벤처 부산 (오시리아)",
   "region": "부산",
-  "source": "https://www.ddaily.co.kr/page/view/2026110909231625603",
+  "source": "https://www.inews24.com/view/2023842",
   "start": "2026-11-28",
   "title": "쿠키런 X 롯데월드 부산 : 매직 윈터 아카데미",
-  "id": "t02"
+  "id": "t02",
+  "officialUrl": "https://adventurebusan.lotteworld.com/kor/main/index.do"
  },
  {
   "addedAt": "2026-11-10",
@@ -2965,7 +2489,8 @@
   "source": "https://www.mt.co.kr/culture/2026/09/04/2026090408535386981",
   "start": "2026-09-19",
   "title": "기묘한 세계의 초대 (이토 준지 가을축제)",
-  "id": "t03"
+  "id": "t03",
+  "officialUrl": "https://adventure.lotteworld.com/kor/main/index.do"
  },
  {
   "addedAt": "2026-11-10",
@@ -2982,7 +2507,8 @@
   "source": "https://www.etoday.co.kr/news/view/2614683",
   "start": "2026-08-29",
   "title": "MAPLESTORY in LOTTEWORLD BUSAN",
-  "id": "t04"
+  "id": "t04",
+  "officialUrl": "https://adventurebusan.lotteworld.com/kor/main/index.do"
  },
  {
   "addedAt": "2026-11-10",
@@ -2996,10 +2522,11 @@
   "lng": 127.202,
   "place": "에버랜드 (용인)",
   "region": "경기",
-  "source": "https://www.yugacrew.com/crewletter/everland-halloween-2026",
+  "source": "https://www.fnnews.com/news/202609071013076587",
   "start": "2026-09-12",
   "title": "에버랜드 가을축제",
-  "id": "t05"
+  "id": "t05",
+  "officialUrl": "https://www.everland.com/"
  },
  {
   "addedAt": "2026-11-10",
@@ -3013,10 +2540,11 @@
   "lng": 127.202,
   "place": "에버랜드 블러드시티 (용인)",
   "region": "경기",
-  "source": "https://www.yugacrew.com/crewletter/everland-halloween-2026",
+  "source": "https://www.fnnews.com/news/202609071013076587",
   "start": "2026-09-12",
   "title": "블러드시티 제로: 지옥의 문",
-  "id": "t06"
+  "id": "t06",
+  "officialUrl": "https://www.everland.com/"
  },
  {
   "addedAt": "2026-11-10",
@@ -3030,10 +2558,11 @@
   "lng": 127.705,
   "place": "레고랜드 코리아 (춘천)",
   "region": "강원",
-  "source": "https://www.legoland.kr/en/",
+  "source": "https://magazine.hankyung.com/money/article/202609118744c",
   "start": "2026-09-11",
   "title": "레고랜드 브릭 오어 트릿",
-  "id": "t07"
+  "id": "t07",
+  "officialUrl": "https://www.legoland.kr/%ED%8C%8C%ED%81%AC%EC%9D%B4%EB%B2%A4%ED%8A%B8/%EC%9D%B4-%EC%8B%9C%EC%A6%8C-%EC%B6%95%EC%A0%9C%EC%9D%B4%EB%B2%A4%ED%8A%B8/y26-brick-or-treat/"
  },
  {
   "addedAt": "2026-11-10",
@@ -3052,7 +2581,8 @@
   "source": "https://www.legoland.kr/",
   "start": "2026-11-20",
   "title": "크리스마스는 LEGOLAND®에서",
-  "id": "t08"
+  "id": "t08",
+  "officialUrl": "https://www.legoland.kr/%ED%8C%8C%ED%81%AC%EC%9D%B4%EB%B2%A4%ED%8A%B8/%EC%9D%B4-%EC%8B%9C%EC%A6%8C-%EC%B6%95%EC%A0%9C%EC%9D%B4%EB%B2%A4%ED%8A%B8/christmas-at-legoland/"
  },
  {
   "addedAt": "2026-11-10",
@@ -3071,7 +2601,8 @@
   "source": "https://www.coex.co.kr/exhibitions/%EC%A0%9C25%ED%9A%8C-%EC%84%9C%EC%9A%B8%EC%B9%B4%ED%8E%98%EC%87%BC/",
   "start": "2026-11-11",
   "title": "제25회 서울카페쇼",
-  "id": "x01"
+  "id": "x01",
+  "officialUrl": "http://kor.cafeshow.com/kor/"
  },
  {
   "addedAt": "2026-11-10",
@@ -3088,7 +2619,8 @@
   "source": "https://www.kintex.com/web/ko/event/view.do?seq=26052706",
   "start": "2026-11-12",
   "title": "메가쇼 & 트래블쇼 2026 시즌2",
-  "id": "x02"
+  "id": "x02",
+  "officialUrl": "https://www.megashow.co.kr/page/index?tpl=sub%2Fmegashow01.html"
  },
  {
   "addedAt": "2026-11-10",
@@ -3107,7 +2639,8 @@
   "source": "https://iartshow.imweb.me/",
   "start": "2026-11-19",
   "title": "인천아트쇼 2026",
-  "id": "x03"
+  "id": "x03",
+  "officialUrl": "https://iartshow.imweb.me/"
  },
  {
   "addedAt": "2026-11-10",
@@ -3124,7 +2657,8 @@
   "source": "https://www.coex.co.kr/exhibitions/마인드케어-웰니스-로컬바이브-트래블-쇼/",
   "start": "2026-11-20",
   "title": "2026 트래블 쇼",
-  "id": "x04"
+  "id": "x04",
+  "officialUrl": "https://localvibe.kr/"
  },
  {
   "addedAt": "2026-11-10",
@@ -3153,7 +2687,8 @@
    }
   ],
   "title": "2026 서울디자인페스티벌",
-  "id": "x05"
+  "id": "x05",
+  "officialUrl": "https://seoul.designfestival.co.kr/"
  },
  {
   "addedAt": "2026-11-10",
@@ -3169,7 +2704,8 @@
   "source": "https://kdjcenter.gjto.or.kr/events/40865/view",
   "start": "2026-11-26",
   "title": "2026 광주경향하우징페어",
-  "id": "x06"
+  "id": "x06",
+  "officialUrl": "https://khfair.com/gwangju/"
  },
  {
   "addedAt": "2026-11-10",
@@ -3183,7 +2719,7 @@
   "lng": 129.136,
   "place": "벡스코 제1전시장 2홀",
   "region": "부산",
-  "source": "https://k-calc.com/events/busan-childrens-book-fair",
+  "source": "https://www.busan.go.kr/eng/bsevents/1760693",
   "start": "2026-12-03",
   "tickets": [
    {
@@ -3196,7 +2732,8 @@
    }
   ],
   "title": "2026 부산국제아동도서전",
-  "id": "x07"
+  "id": "x07",
+  "officialUrl": "https://bicbf.or.kr/"
  },
  {
   "addedAt": "2026-11-10",
@@ -3242,7 +2779,8 @@
    }
   ],
   "title": "서울일러스트레이션페어 V.22",
-  "id": "x09"
+  "id": "x09",
+  "officialUrl": "https://ocreo.kr/"
  },
  {
   "addedAt": "2026-11-10",

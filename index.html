@@ -170,6 +170,15 @@ h2.grp{font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--muted);ma
 .rvform textarea{min-height:64px;resize:vertical}
 .rvform .rrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .rvform .rmsg{font-size:12.5px;color:var(--muted)}
+.legal{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px;font-size:13px}
+.legal a{color:var(--muted);text-decoration:none}.legal a:hover{text-decoration:underline;color:var(--ink)}.legal span{color:var(--line)}
+.ldlg{max-width:min(680px,calc(100vw - 32px));width:100%;max-height:85vh;border:1px solid var(--line);border-radius:14px;padding:0;background:var(--surface);color:var(--ink)}
+.ldlg::backdrop{background:rgba(0,0,0,.45)}
+.lclose{position:sticky;top:0;display:flex;justify-content:flex-end;padding:8px 10px 0;background:var(--surface)}
+.lclose button{font:inherit;font-size:18px;background:none;border:0;color:var(--muted);cursor:pointer;padding:4px 8px}
+.lbody{padding:0 22px 22px;font-size:14px;line-height:1.65}.lbody h2{margin:0 0 4px;font-size:19px}.lbody h3{margin:18px 0 4px;font-size:15px}.lbody p,.lbody ul{margin:4px 0}.lbody ul{padding-left:20px}.lbody .lmeta{color:var(--muted);font-size:12.5px}.lbody a{color:var(--accent)}
+.rvlist .rh button,.rvlist .rh .rpt{white-space:nowrap;flex:none}.rvlist .rh{flex-wrap:wrap}.rvlist li.hid p{color:var(--muted);font-style:italic}
+.rpbox{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}.rpbox button{font:inherit;font-size:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:3px 9px;cursor:pointer}
 .offl{font-weight:700!important;color:var(--ink)!important;border:1px solid var(--line);border-radius:999px;padding:3px 10px;text-decoration:none!important;background:color-mix(in srgb,var(--accent) 10%,var(--surface))}
 .offl:hover{border-color:var(--accent)}
 .parks{display:flex;flex-wrap:wrap;gap:8px}
@@ -409,7 +418,9 @@ footer a{color:var(--muted)}
 
   <footer>
     행사 정보는 각 출처를 기준으로 정리했어요. 일정은 바뀔 수 있으니 방문 전에 출처에서 확인하세요.
+    <nav class="legal"><a href="#" data-legal="terms">이용약관</a><span>·</span><a href="#" data-legal="privacy"><b>개인정보처리방침</b></a><span>·</span><a href="#" data-legal="contact">문의·신고</a></nav>
   </footer>
+  <dialog id="legalDlg" class="ldlg"><form method="dialog" class="lclose"><button aria-label="닫기">✕</button></form><div id="legalBody" class="lbody"></div></dialog>
 </div>
 
 <script src="config.js"></script>
@@ -420,7 +431,7 @@ footer a{color:var(--muted)}
 const C=window.CF_CONFIG||{};
 const SB=C.supabaseUrl&&C.supabaseAnonKey?{url:C.supabaseUrl.replace(/\/$/,""),key:C.supabaseAnonKey}:null;
 window.CF_REVIEWS=!!SB;
-const RVC="tips/reviews/items";
+const RVC="tips/reviews/items",RPC="tips/reports/items";
 let uid=null;try{uid=localStorage.getItem("cf-uid");if(!uid){uid="u_"+Math.random().toString(36).slice(2,12)+Date.now().toString(36);localStorage.setItem("cf-uid",uid)}}catch(_){uid=null}
 const snap=rows=>({docs:rows.map(r=>({id:String(r.id),data:()=>r,exists:true})),metadata:{fromCache:false}});
 const getJSON=p=>fetch(p+"?v="+Math.floor(Date.now()/600000),{cache:"no-store"}).then(r=>r.ok?r.json():[]).catch(()=>[]);
@@ -432,11 +443,13 @@ function collection(name){return{
     if(name==="events"){Promise.all([getJSON("data/events.json"),getJSON("data/tour.json")]).then(([a,b])=>cb(snap([...(a||[]),...(b||[])])));return()=>{}}
     if(name==="watchlist"){getJSON("data/watchlist.json").then(a=>cb(snap(a||[])));return()=>{}}
     if(name===RVC&&SB){rvSubs.add(cb);loadReviews().catch(()=>err&&err({code:"sb"}));return()=>rvSubs.delete(cb)}
+    if(name===RPC&&SB){sb("reports?select=rid,uid&limit=10000").then(rows=>cb(snap((rows||[]).map((r,i)=>({id:String(i),...r}))))).catch(()=>err&&err({code:"sb"}));return()=>{}}
     if(name==="tourimg"){setTimeout(()=>cb(snap([])),0);return()=>{}}
     setTimeout(()=>err&&err({code:"unavailable"}),0);return()=>{}},
   async add(obj){if(name==="tips"&&SB){await sb("tips",{method:"POST",body:JSON.stringify({data:obj}),headers:{Prefer:"return=minimal"}});return{id:""}}throw{code:"unavailable"}},
   doc(id){return{
-    async set(obj){if(name===RVC&&SB){await sb("reviews",{method:"POST",body:JSON.stringify({id,...obj}),headers:{Prefer:"resolution=merge-duplicates,return=minimal"}});loadReviews().catch(()=>{});return}throw{code:"unavailable"}},
+    async set(obj){if(name===RPC&&SB){await sb("reports",{method:"POST",body:JSON.stringify({id,...obj}),headers:{Prefer:"resolution=ignore-duplicates,return=minimal"}});return}
+      if(name===RVC&&SB){await sb("reviews",{method:"POST",body:JSON.stringify({id,...obj}),headers:{Prefer:"resolution=merge-duplicates,return=minimal"}});loadReviews().catch(()=>{});return}throw{code:"unavailable"}},
     async delete(){if(name===RVC&&SB){await sb("reviews?id=eq."+encodeURIComponent(id)+"&uid=eq."+encodeURIComponent(uid),{method:"DELETE",headers:{Prefer:"return=minimal"}});loadReviews().catch(()=>{});return}throw{code:"unavailable"}},
     async update(){throw{code:"unavailable"}}}}
 }}
@@ -796,6 +809,49 @@ $("nearSave").addEventListener("click",()=>{if(!draftNear||draftNear.lat==null){
   Object.assign(near,draftNear,{on:true});DISTC.clear();saveNear();$("nearPanel").hidden=true;render()});
 $("nearOff").addEventListener("click",()=>{near.on=false;saveNear();$("nearPanel").hidden=true;render()});
 
+
+/* ---------- 신고 · 약관 · 개인정보 ---------- */
+const RPC="tips/reports/items",HIDE_AT=3;
+state.reports={};state.rpOpen=null;
+const REASONS=["욕설·비방","허위 사실","광고·스팸","개인정보 노출","기타"];
+function repOf(rid){return state.reports[rid]||{n:0,mine:false}}
+const IS_GH=!!window.CF_CONFIG;
+const CONTACT=(window.CF_CONFIG&&window.CF_CONFIG.contactEmail)||"";
+const LEGAL_DATE="2026년 11월 11일";
+function legalHTML(kind){
+  const store=IS_GH?"Supabase(미국 소재 클라우드 데이터베이스)":"Anthropic의 Claude 아티팩트 저장소";
+  const idTxt=IS_GH?"브라우저에서 무작위로 만든 익명 식별값(이름·이메일 등은 수집하지 않음)":"claude.ai 계정에 연결된 익명 식별값(이름·이메일은 앱에 저장하지 않음)";
+  const contact=CONTACT?`이메일 <a href="mailto:${esc(CONTACT)}">${esc(CONTACT)}</a> 또는 앱 안의 '신고' 버튼`:"앱 안의 후기 '신고' 버튼"+(IS_GH?"":" 또는 '행사 제보·추가' 칸");
+  if(kind==="privacy")return `<h2>개인정보처리방침</h2><p class="lmeta">시행일: ${LEGAL_DATE}</p>
+  <p>캐치페스타(이하 '서비스')는 이용자의 개인정보를 최소한으로만 다루며, 「개인정보 보호법」을 지킵니다.</p>
+  <h3>1. 처리하는 정보와 목적</h3><ul>
+  <li><b>평점·후기:</b> ${idTxt}, 별점, 후기 내용, 작성 시각 — 후기 표시와 본인 후기 수정·삭제를 위해</li>
+  <li><b>신고:</b> 신고한 후기 정보, 신고 사유, 신고자 익명 식별값, 신고 시각 — 부적절한 게시물 처리를 위해</li>
+  ${IS_GH?"":"<li><b>찜 목록·제보:</b> 찜한 행사 목록, 직접 입력한 제보 내용 — 기능 제공을 위해</li>"}</ul>
+  <h3>2. 기기에만 저장하는 정보</h3><ul>
+  <li><b>우리동네 위치:</b> '현재 위치로 설정'을 누르거나 동네를 고르면 그 좌표와 반경을 <b>이용자 기기의 브라우저에만</b> 저장해요. 서버로 보내거나 수집하지 않아요.</li>
+  <li><b>찜 목록·화면 설정:</b> 브라우저 저장소(localStorage)에 저장해요. 브라우저 데이터를 지우면 함께 지워져요.</li></ul>
+  <h3>3. 보관 기간과 파기</h3><p>후기와 신고는 이용자가 삭제하거나 삭제를 요청할 때, 또는 서비스를 종료할 때 지체 없이 파기해요.</p>
+  <h3>4. 제3자 제공·처리 위탁</h3><p>개인정보를 제3자에게 제공하지 않아요. 데이터는 ${store}에 보관돼요.</p>
+  <h3>5. 이용자의 권리</h3><p>본인 후기는 언제든 '삭제' 버튼으로 지울 수 있고, 열람·정정·삭제·처리정지를 요청할 수 있어요.</p>
+  <h3>6. 만 14세 미만</h3><p>만 14세 미만은 후기를 작성하지 말아 주세요. 확인되면 삭제해요.</p>
+  <h3>7. 문의</h3><p>${contact}</p>`;
+  if(kind==="terms")return `<h2>이용약관</h2><p class="lmeta">시행일: ${LEGAL_DATE}</p>
+  <h3>1. 서비스 내용</h3><p>캐치페스타는 전국 축제·공연·팝업 등 행사 정보를 모아 보여주고, 각 행사의 공식 사이트·예매처·출처로 연결하는 무료 서비스예요.</p>
+  <h3>2. 정보의 정확성</h3><p>행사 정보는 공식 사이트, 한국관광공사 TourAPI, 언론 기사 등 공개된 출처를 바탕으로 정리해요. 일정·가격·예매 시간은 주최 측 사정으로 바뀔 수 있으니 방문·예매 전에 반드시 공식 사이트에서 확인해 주세요. 서비스는 행사 주최·예매·환불의 당사자가 아니며, 정보 변경으로 생긴 손해에 대해 책임지지 않아요.</p>
+  <h3>3. 후기 작성 규칙</h3><p>다음 게시물은 쓸 수 없어요.</p><ul><li>욕설, 비방, 차별·혐오 표현</li><li>사실이 아닌 내용으로 다른 사람이나 업체의 명예를 훼손하는 글</li><li>광고·홍보·스팸, 대가를 받고 쓴 후기(표시 없이)</li><li>전화번호·주소 등 개인정보가 담긴 글</li><li>다른 사람의 저작물을 무단으로 옮긴 글</li></ul>
+  <h3>4. 게시물 관리(임시조치)</h3><p>권리를 침해당했다고 주장하는 사람이 삭제를 요청하거나, 후기에 신고가 ${HIDE_AT}건 이상 쌓이면 해당 후기를 먼저 가리고(임시조치) 검토한 뒤 삭제 또는 복구해요. 위 규칙을 어긴 게시물은 알리지 않고 삭제할 수 있어요.</p>
+  <h3>5. 저작권</h3><p>행사 사진은 한국관광공사가 공공누리 제1·3유형으로 공개한 이미지를 출처와 함께 원본 그대로 사용하거나, 서비스가 직접 만든 그림을 사용해요. 후기의 저작권은 작성자에게 있으며, 서비스는 후기를 서비스 화면에 표시하는 범위에서만 사용해요.</p>
+  <h3>6. 외부 링크</h3><p>공식 사이트·예매처 등 외부 사이트의 내용과 거래는 해당 사이트의 약관을 따라요.</p>
+  <h3>7. 문의·신고</h3><p>${contact}</p>`;
+  return `<h2>문의 · 신고</h2><ul>
+  <li><b>후기 신고:</b> 각 후기 오른쪽의 '신고'를 누르고 사유를 고르면 돼요. 신고가 ${HIDE_AT}건 이상 쌓이면 자동으로 가려져요.</li>
+  <li><b>권리 침해 삭제 요청</b>(명예훼손·사생활 침해 등): ${contact}로 해당 후기와 침해 내용을 알려 주시면 확인 후 가림·삭제 조치해요.</li>
+  <li><b>행사 정보 오류:</b> ${CONTACT?`이메일 <a href="mailto:${esc(CONTACT)}">${esc(CONTACT)}</a>`:IS_GH?"아래 문의처":"'행사 제보·추가' 칸"}으로 알려 주세요.</li></ul>`;
+}
+function openLegal(kind){const d=$("legalDlg");$("legalBody").innerHTML=legalHTML(kind);if(d.showModal)d.showModal();else d.setAttribute("open","")}
+document.addEventListener("click",ev=>{const a=ev.target.closest("[data-legal]");if(a){ev.preventDefault();openLegal(a.dataset.legal)}});
+
 /* ---------- 평점·후기 ---------- */
 const RVC="tips/reviews/items";
 let rvReady=false;
@@ -807,10 +863,15 @@ function rvSumHTML(e){const rs=rvOf(e);return rs.length?`<span class="rvsum"><sp
 function rvBtnLabel(e){const n=rvOf(e).length;return state.rvOpen.has(e.id)?"후기 닫기":n?`후기 ${n}`:"평점·후기 쓰기"}
 function rvPanel(e){const rs=rvOf(e),mine=uid?rs.find(r=>r.uid===uid):null;const d=state.rvDraft[e.id]||(state.rvDraft[e.id]={rating:mine?Number(mine.rating)||0:0,text:mine?String(mine.text||""):"",msg:""});
   const list=rs.length?`<ul class="rvlist">${rs.map(r=>{const n=Math.max(1,Math.min(5,Math.round(Number(r.rating)||0)));const dt=r.at?new Date(r.at):null;
-    return `<li><div class="rh"><span class="st" aria-label="별 ${n}개">${starsTxt(n)}</span><span>${r.uid&&r.uid===uid?"내 후기":"방문자"}${dt?" · "+(dt.getMonth()+1)+"."+dt.getDate():""}</span>${(r.uid&&r.uid===uid)||canEdit?`<button data-rvdel="${esc(r.id)}" data-eid="${esc(e.id)}">삭제</button>`:""}</div>${r.text?`<p>${esc(r.text)}</p>`:""}</li>`}).join("")}</ul>`:`<p class="rmsg" style="margin:0;font-size:13px;color:var(--muted)">아직 후기가 없어요. 첫 후기를 남겨 주세요.</p>`;
+    const rp=repOf(r.id),mineR=r.uid&&r.uid===uid,hid=rp.n>=HIDE_AT&&!canEdit;
+    const rpBtn=!mineR&&uid&&db?(rp.mine?`<span class="rpt">신고함</span>`:`<button class="rpt" data-rpopen="${esc(r.id)}">신고</button>`):"";
+    const rpCnt=canEdit&&rp.n?`<span class="rpt" style="color:var(--hot)">신고 ${rp.n}건${rp.n>=HIDE_AT?" · 가려짐":""}</span>`:"";
+    const box=state.rpOpen===r.id?`<div class="rpbox">${REASONS.map(x=>`<button data-rpsend="${esc(r.id)}" data-eid="${esc(e.id)}" data-why="${esc(x)}">${esc(x)}</button>`).join("")}<button data-rpopen="">취소</button></div>`:"";
+    return `<li class="${hid?"hid":""}"><div class="rh"><span class="st" aria-label="별 ${n}개">${starsTxt(n)}</span><span>${mineR?"내 후기":"방문자"}${dt?" · "+(dt.getMonth()+1)+"."+dt.getDate():""}</span>${rpCnt}${rpBtn}${mineR||canEdit?`<button data-rvdel="${esc(r.id)}" data-eid="${esc(e.id)}">삭제</button>`:""}</div>${hid?`<p>신고가 누적되어 검토 중인 후기예요.</p>`:r.text?`<p>${esc(r.text)}</p>`:""}${box}</li>`}).join("")}</ul>`:`<p class="rmsg" style="margin:0;font-size:13px;color:var(--muted)">아직 후기가 없어요. 첫 후기를 남겨 주세요.</p>`;
   const form=!db||!rvReady?`<p class="rmsg" style="margin:0;font-size:13px;color:var(--muted)">후기는 claude.ai에 로그인하고 이 페이지를 편집·참여 권한으로 열었을 때 쓰고 볼 수 있어요.</p>`:!uid?`<p class="rmsg" style="margin:0;font-size:13px;color:var(--muted)">후기를 쓰려면 로그인이 필요해요.</p>`:
     `<div class="rvform"><div class="stars" role="group" aria-label="별점">${[1,2,3,4,5].map(i=>`<button data-star="${i}" data-eid="${esc(e.id)}" aria-pressed="${d.rating>=i}" aria-label="${i}점">★</button>`).join("")}</div>
      <textarea data-rvtext="${esc(e.id)}" maxlength="300" placeholder="다녀온 후기, 꿀팁을 남겨 주세요 (300자)">${esc(d.text)}</textarea>
+     <p class="rmsg" style="margin:0">후기를 등록하면 <a href="#" data-legal="terms">이용약관</a>과 <a href="#" data-legal="privacy">개인정보처리방침</a>에 동의하는 것으로 봐요.</p>
      <div class="rrow"><button class="btn" data-rvsave="${esc(e.id)}">${mine?"후기 수정":"후기 등록"}</button><span class="rmsg">${esc(d.msg||"")}</span></div></div>`;
   return `<div class="rv">${list}${form}</div>`}
 document.addEventListener("input",ev=>{const t=ev.target.closest&&ev.target.closest("[data-rvtext]");if(!t)return;const d=state.rvDraft[t.dataset.rvtext];if(d)d.text=t.value});
@@ -823,6 +884,10 @@ document.addEventListener("click",async ev=>{
     try{await db.collection(RVC).doc(String(eid).replace(/[^A-Za-z0-9_\-.:@+]/g,"_")+"~"+uid).set({eid:String(eid),uid,rating:d.rating,text:String(d.text||"").slice(0,300),at:Date.now()});d.msg="저장했어요."}
     catch(_){d.msg="저장하지 못했어요. 참여 권한이 있는지 확인해 주세요."}
     render();return}
+  const ro=ev.target.closest("[data-rpopen]");if(ro){state.rpOpen=ro.dataset.rpopen||null;render();return}
+  const rs=ev.target.closest("[data-rpsend]");if(rs){const rid=rs.dataset.rpsend;if(!db||!uid)return;
+    try{await db.collection(RPC).doc(rid+"~"+uid).set({rid,eid:rs.dataset.eid,uid,reason:rs.dataset.why,at:Date.now()});const cur=repOf(rid);state.reports[rid]={n:cur.mine?cur.n:cur.n+1,mine:true}}catch(_){}
+    state.rpOpen=null;render();return}
   const dl=ev.target.closest("[data-rvdel]");if(dl){try{await db.collection(RVC).doc(dl.dataset.rvdel).delete();const d=state.rvDraft[dl.dataset.eid];if(d&&dl.dataset.rvdel.endsWith("~"+uid)){d.rating=0;d.text="";d.msg="삭제했어요."}}catch(_){}render()}
 });
 
@@ -993,6 +1058,7 @@ loadLocalFavs();
     db.doc("data/users/"+uid+"/favs").onSnapshot(s=>{if(s.exists&&Array.isArray(s.data().ids)){state.favs=new Set(s.data().ids);render()}},()=>{});
   }
   db.collection("watchlist").onSnapshot(s=>renderWatch(s.docs),()=>{});
+  db.collection(RPC).onSnapshot(s=>{const m={};s.docs.forEach(d=>{const r=d.data();if(!r||!r.rid)return;const x=m[r.rid]||(m[r.rid]={n:0,mine:false});x.n++;if(r.uid===uid)x.mine=true});state.reports=m;render()},()=>{});
   db.collection(RVC).onSnapshot(s=>{const m={};s.docs.forEach(d=>{const r=d.data();if(!r||!r.eid)return;(m[r.eid]||(m[r.eid]=[])).push({id:d.id,...r})});for(const k in m)m[k].sort((a,b)=>(b.at||0)-(a.at||0));state.reviews=m;rvReady=true;render()},()=>{rvReady=false});
   db.collection("tourimg").onSnapshot(s=>{const m={};s.docs.forEach(d=>m[d.id]=d.data());state.tourImg=m;render()},()=>{});
   if(canEdit&&assetsNS){$("photoBox").hidden=false;try{$("photoAuto").checked=localStorage.getItem("fr-photoauto")!=="0"}catch(_){$("photoAuto").checked=true}}

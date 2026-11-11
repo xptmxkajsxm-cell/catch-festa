@@ -1204,6 +1204,25 @@
   "imageFit": "contain"
  },
  {
+  "id": "tour-3578130",
+  "contentid": "3578130",
+  "title": "울산 크리스마스 마켓",
+  "start": "2026-11-27",
+  "end": "2026-12-26",
+  "region": "울산",
+  "place": "울산광역시 남구 대공원로 94 (옥동)",
+  "category": "빛·겨울",
+  "desc": "울산 크리스마스 마켓은 2026년 11월 27일부터 12월 26일까지 울산대공원 정문 풍차 일원에서 개최되는 크리스마스 테마의 야간 마켓이다. 울산문화관광재단… · 문의 052-271-8701",
+  "source": "https://korean.visitkorea.or.kr/search/search_list.do?keyword=%EC%9A%B8%EC%82%B0%20%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4%20%EB%A7%88%EC%BC%93",
+  "from": "tour",
+  "lat": 35.5316566254,
+  "lng": 129.2935190325,
+  "officialUrl": "http://ulsanstorynightmarket.com/",
+  "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/40/4153340_image2_1.jpg",
+  "imageCredit": "사진: 한국관광공사 · 공공누리 3유형",
+  "imageFit": "contain"
+ },
+ {
   "id": "tour-3367339",
   "contentid": "3367339",
   "title": "2026 우리쌀 우리술 K-라이스페스타",
@@ -1294,7 +1313,7 @@
   "lat": 37.5716249337,
   "lng": 126.9767679222,
   "officialUrl": "https://www.stolantern.com/",
-  "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/80/4140180_image2_1.jpg",
+  "imageUrl": "https://tong.visitkorea.or.kr/cms/resource/78/4153378_image2_1.png",
   "imageCredit": "사진: 한국관광공사 · 공공누리 3유형",
   "imageFit": "contain"
  },
@@ -1313,6 +1332,22 @@
   "lat": 37.569204,
   "lng": 126.977633,
   "officialUrl": "http://stolantern.com"
+ },
+ {
+  "id": "tour-2785797",
+  "contentid": "2785797",
+  "title": "청계천의 빛",
+  "start": "2026-12-11",
+  "end": "2026-12-31",
+  "region": "서울",
+  "place": "서울특별시 중구 태평로 1가 1 청계천 청계광장 일대",
+  "category": "빛·겨울",
+  "desc": "2015년 서울의 겨울밤을 처음 밝힌 '청계천의 빛'이 열두 번째 겨울을 맞아 12월 11일부터 31일까지 21일간 서울 청계광장에서 펼쳐진다. 올해는 '내일… · 문의 02-904-1159",
+  "source": "https://korean.visitkorea.or.kr/search/search_list.do?keyword=%EC%B2%AD%EA%B3%84%EC%B2%9C%EC%9D%98%20%EB%B9%9B",
+  "from": "tour",
+  "lat": 37.5690771533,
+  "lng": 126.977599239,
+  "officialUrl": "http://www.seoulcl.kr/main/index.html"
  },
  {
   "id": "tour-4115260",

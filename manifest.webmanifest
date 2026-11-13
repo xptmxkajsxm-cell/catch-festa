@@ -1,0 +1,20 @@
+{
+  "id": "./",
+  "name": "캐치페스타 - 전국 축제·공연·팝업 행사",
+  "short_name": "캐치페스타",
+  "description": "전국 지역축제, 콘서트·음악·DJ, 서브컬처·게임, 팝업스토어, 반려동물·박람회·테마파크 행사를 지역과 날짜로 찾고 예매 일정까지 확인하는 앱",
+  "lang": "ko",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0f26",
+  "theme_color": "#121a3d",
+  "categories": ["entertainment", "lifestyle", "travel"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

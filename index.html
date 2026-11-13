@@ -3,6 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#121a3d">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="description" content="전국 축제·서브컬처 행사·팝업스토어·콘서트를 지역과 날짜로 찾는 캐치페스타">
 <style>*,*::before,*::after{box-sizing:border-box}body{margin:0}[hidden]{display:none!important}</style>
 </head>
@@ -418,7 +422,7 @@ footer a{color:var(--muted)}
 
   <footer>
     행사 정보는 각 출처를 기준으로 정리했어요. 일정은 바뀔 수 있으니 방문 전에 출처에서 확인하세요.
-    <nav class="legal"><a href="#" data-legal="terms">이용약관</a><span>·</span><a href="#" data-legal="privacy"><b>개인정보처리방침</b></a><span>·</span><a href="#" data-legal="contact">문의·신고</a></nav>
+    <nav class="legal"><a href="#" data-legal="terms">이용약관</a><span>·</span><a href="privacy.html" data-legal="privacy"><b>개인정보처리방침</b></a><span>·</span><a href="#" data-legal="contact">문의·신고</a></nav>
   </footer>
   <dialog id="legalDlg" class="ldlg"><form method="dialog" class="lclose"><button aria-label="닫기">✕</button></form><div id="legalBody" class="lbody"></div></dialog>
 </div>
@@ -1288,5 +1292,6 @@ async function checkFee(cid,btn){
 })();
 </script>
 
+<script>if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));</script>
 </body>
 </html>

@@ -1,8 +1,15 @@
-[{
-      "relation": ["delegate_permission/common.handle_all_urls"],
-      "target": {
-        "namespace": "android_app",
-        "package_name": "kr.catchfesta.app",
-        "sha256_cert_fingerprints": ["98:13:D0:72:39:96:16:4E:1F:FB:8F:BB:FF:4F:CB:F9:C5:D7:EF:0D:D6:0A:E9:EF:C8:5A:29:B2:F3:3F:D8:69"]
-      }
-    }]
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "kr.catchfesta.app",
+      "sha256_cert_fingerprints": [
+        "B8:71:F8:9F:F7:47:F3:6A:32:60:F5:D2:45:F4:54:20:8C:EB:61:14:97:43:22:A3:0A:BE:76:50:D0:1D:88:3D",
+        "98:13:D0:72:39:96:16:4E:1F:FB:8F:BB:FF:4F:CB:F9:C5:D7:EF:0D:D6:0A:E9:EF:C8:5A:29:B2:F3:3F:D8:69"
+      ]
+    }
+  }
+]

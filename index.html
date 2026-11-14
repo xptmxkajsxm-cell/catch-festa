@@ -74,6 +74,18 @@ h1 b{color:var(--accent);font-weight:400}
 .search:focus-within{border-color:var(--accent)}
 .row2{display:flex;align-items:center;gap:8px;min-width:0}
 .row2 .chips{flex:1 1 auto;min-width:0}
+.rbreak{display:none}
+.row2.nearon{flex-wrap:wrap;row-gap:8px}
+.row2.nearon .rbreak{display:block;flex-basis:100%;height:0}
+.row2.nearon .chips{flex:1 1 0}
+.row2.nearon .nearbtn{max-width:calc(100% - 64px)}
+#nearLbl{overflow:hidden;text-overflow:ellipsis}
+.bar{transition:transform .25s ease}
+.bar.hid{transform:translateY(calc(-100% - 14px))}
+.totop{position:fixed;right:16px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:6;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);box-shadow:0 4px 14px rgba(0,0,0,.18);display:grid;place-items:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s}
+.totop.on{opacity:1;pointer-events:auto}
+.totop svg{width:20px;height:20px}
+@media (prefers-reduced-motion:reduce){.bar,.totop{transition:none}}
 .fbtn{flex:none;display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:13px;font-weight:700;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:5px 12px;cursor:pointer}
 .fbtn svg{width:15px;height:15px}
 .fbtn[aria-expanded="true"]{border-color:var(--ink)}
@@ -115,7 +127,7 @@ h2.grp{font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--muted);ma
 .autop{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:10px 10px 9px;background:linear-gradient(180deg,transparent 45%,color-mix(in srgb,var(--cc) 55%,#000) 100%)}
 .autop>span:last-child{display:grid;gap:1px}
 @container (max-width:110px){.autop .pt,.autop .pr{display:none}.autop .pd{font-size:26cqw}.poster .art{inset:0;height:100%}}
-.autop .pm{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;opacity:.9}
+.autop .pm{font-family:var(--f-mono);font-size:min(11px,9cqw);letter-spacing:.06em;opacity:.9;white-space:nowrap;overflow:hidden}
 .poster:has(.upimg) .autop .pm{visibility:hidden}
 .poster{container-type:inline-size}
 .autop .pd{font-family:var(--f-display);font-size:20cqw;align-self:flex-start;margin-top:auto;text-shadow:0 1px 6px rgba(0,0,0,.25);line-height:.95;font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -126,8 +138,11 @@ h2.grp{font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--muted);ma
 .credit{position:absolute;left:0;right:0;bottom:0;font-size:9.5px;line-height:1.3;padding:8px 5px 3px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.7));white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .upimg{position:absolute;left:6px;right:6px;top:6px;font:inherit;font-size:11.5px;font-weight:700;border:0;border-radius:6px;padding:4px 3px;background:rgba(0,0,0,.62);color:#fff;cursor:pointer;font-size:clamp(10px,8.5cqw,11.5px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .upimg:disabled{opacity:.7;cursor:default}
-.card .head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
-.card h3{margin:0;font-size:16px;line-height:1.35;text-wrap:balance;min-width:0}
+.card .head{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.card .head .badge{max-width:100%;white-space:normal}
+.cbody>*{min-width:0;max-width:100%}
+.meta>*{min-width:0;overflow-wrap:anywhere}
+.card h3{margin:0;font-size:16px;line-height:1.35;text-wrap:balance;min-width:0;max-width:100%;word-break:keep-all;overflow-wrap:anywhere}
 .meta{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13px;color:var(--muted)}
 .dates{font-family:var(--f-mono);font-size:12.5px;font-variant-numeric:tabular-nums;color:var(--ink)}
 .badge{font-size:12px;font-weight:700;padding:2px 8px;border-radius:6px;white-space:nowrap;font-variant-numeric:tabular-nums}
@@ -330,7 +345,7 @@ footer a{color:var(--muted)}
       <label class="search"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M13 13l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><input id="q" type="text" placeholder="행사 이름·장소 검색" aria-label="검색"></label>
     </div>
     <div class="row2">
-      <button class="nearbtn" id="nearBtn" aria-pressed="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 18s6-5.6 6-10a6 6 0 0 0-12 0c0 4.4 6 10 6 10z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="10" cy="8" r="2.2" fill="currentColor"/></svg><span id="nearLbl">우리동네</span></button><button class="nearset" id="nearSet" hidden>변경</button>
+      <button class="nearbtn" id="nearBtn" aria-pressed="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 18s6-5.6 6-10a6 6 0 0 0-12 0c0 4.4 6 10 6 10z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="10" cy="8" r="2.2" fill="currentColor"/></svg><span id="nearLbl">우리동네</span></button><button class="nearset" id="nearSet" hidden>변경</button><span class="rbreak" aria-hidden="true"></span>
       <div class="chips" id="periods" role="group" aria-label="기간"></div>
       <button class="fbtn" id="filterBtn" aria-expanded="false" aria-controls="filterPanel"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14M6 10h8M8.5 15h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>필터<span id="filterCount"></span></button>
     </div>
@@ -679,7 +694,7 @@ function card(e){
   const feeHTML=fe.k?`<span class="feepill ${fe.k}">${fe.k==="free"?"무료":"유료"}</span>${fe.note&&fe.note!=="무료"?`<span class="feenote">${esc(fe.note)}</span>`:""}`:(false?`<button class="fav" data-feecheck="${esc(cidOf(e))}">요금 확인</button>`:`<span class="feenote">요금 정보 없음</span>`);
   return `<article class="card" style="--cc:var(${c.color})">
     <div class="cbody">
-    <div class="head"><h3>${esc(e.title)}</h3><span class="badge ${b.cls}">${b.t}</span></div>
+    <div class="head"><span class="badge ${b.cls}">${b.t}</span><h3>${esc(e.title)}</h3></div>
     <div class="meta"><span class="dates">${fmt(e.start)}${e.end!==e.start?" – "+fmt(e.end):""}</span><span class="cat">${esc(e.category==="팝업"?"팝업스토어":e.category)}</span><span>${esc(e.region)}</span>${distTag(e)}${rvSumHTML(e)}</div>
     <div class="meta"><span>${esc(e.place||"")}</span></div>
     <div class="meta" style="align-items:center">${feeHTML}</div>
@@ -787,7 +802,7 @@ const DISTC=new Map();
 function distOf(e){if(near.lat==null||typeof e.lat!=="number"||typeof e.lng!=="number")return null;const k=e.lat+","+e.lng;if(DISTC.has(k))return DISTC.get(k);
   const R=6371,toR=Math.PI/180,dLa=(e.lat-near.lat)*toR,dLo=(e.lng-near.lng)*toR,a=Math.sin(dLa/2)**2+Math.cos(near.lat*toR)*Math.cos(e.lat*toR)*Math.sin(dLo/2)**2;const d=2*R*Math.asin(Math.sqrt(a));DISTC.set(k,d);return d}
 const distTag=e=>{if(!near.on)return"";const d=distOf(e);return d==null?"":`<span class="dist">${d<1?"1km 이내":d<10?d.toFixed(1)+"km":Math.round(d)+"km"}</span>`};
-function syncNear(){const has=near.lat!=null;$("nearBtn").setAttribute("aria-pressed",String(has&&near.on));$("nearLbl").textContent=has?`우리동네 · ${near.label} ${near.r}km`:"우리동네";$("nearSet").hidden=!has}
+function syncNear(){const has=near.lat!=null;$("nearBtn").setAttribute("aria-pressed",String(has&&near.on));$("nearBtn").closest(".row2").classList.toggle("nearon",has);$("nearLbl").textContent=has?`우리동네 · ${near.label} ${near.r}km`:"우리동네";$("nearSet").hidden=!has}
 const RADII=[5,10,20,30,50];
 let draftNear=null;
 function openNear(){draftNear={lat:near.lat,lng:near.lng,label:near.label,r:near.r};$("nearPanel").hidden=false;$("nearGpsMsg").textContent=near.lat!=null?`현재: ${near.label}`:"";drawRadii();
@@ -1293,5 +1308,26 @@ async function checkFee(cid,btn){
 </script>
 
 <script>if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));</script>
+<script>
+/* 스크롤 내리면 위쪽 탭 숨기기, 올리면 다시 보이기 + 맨 위로 버튼 */
+(function(){
+  const bar=document.querySelector(".bar");if(!bar)return;
+  const top=document.createElement("button");top.className="totop";top.type="button";top.setAttribute("aria-label","맨 위로");
+  top.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 16V4M4.5 9.5 10 4l5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  top.addEventListener("click",()=>{bar.classList.remove("hid");window.scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth"})});
+  document.body.appendChild(top);
+  const q=id=>document.getElementById(id);
+  let last=window.scrollY,tick=false;
+  const panelOpen=()=>(q("filterPanel")&&!q("filterPanel").hidden)||(q("nearPanel")&&!q("nearPanel").hidden)||(bar.contains(document.activeElement)&&document.activeElement.tagName==="INPUT");
+  function upd(){tick=false;const y=window.scrollY,d=y-last;
+    if(panelOpen()||y<300)bar.classList.remove("hid");
+    else if(d>6)bar.classList.add("hid");
+    else if(d<-6)bar.classList.remove("hid");
+    if(Math.abs(d)>6)last=y;
+    top.classList.toggle("on",y>600)}
+  window.addEventListener("scroll",()=>{if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});
+  bar.addEventListener("focusin",()=>bar.classList.remove("hid"));
+})();
+</script>
 </body>
 </html>

@@ -151,6 +151,9 @@ h2.grp{font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--muted);ma
 .badge.last{background:var(--hot);color:var(--bg)}
 .cat{color:var(--cc);font-weight:700}
 .desc{margin:0;font-size:14px}
+.desc.clamp{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.desc.clamp.open{display:block;overflow:visible}
+.card .more{justify-self:start;font:inherit;font-size:13px;font-weight:700;color:var(--accent);background:none;border:0;padding:0;margin-top:-2px;cursor:pointer}
 .actions{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;align-items:center}
 .actions a{color:var(--accent);text-decoration:none;font-weight:500}
 .actions a:hover{text-decoration:underline}
@@ -697,6 +700,8 @@ upInput.addEventListener("change",async()=>{
 });
 const PARKS=[["롯데월드 어드벤처 부산","https://adventurebusan.lotteworld.com/kor/main/index.do","부산"],["롯데월드","https://adventure.lotteworld.com/kor/main/index.do","서울"],["에버랜드","https://www.everland.com/","경기"],["레고랜드","https://www.legoland.kr/","강원"],["서울랜드","https://www.seoulland.co.kr/","경기"],["경주월드","https://www.gjw.co.kr/","경북"],["이월드","https://www.eworld.kr/","대구"],["오월드","https://www.oworld.kr/","대전"],["서울대공원","https://grandpark.seoul.go.kr/","경기"],["어린이대공원","https://www.sisul.or.kr/open_content/childrenpark/","서울"]];
 function parkUrl(e){const t=(e.place||"")+" "+(e.title||"");const hit=PARKS.find(([n,,r])=>t.includes(n)&&(n!=="롯데월드"||e.region!=="부산"));return hit?hit[1]:""}
+const DESC_OPEN=new Set();
+document.addEventListener("click",ev=>{const b=ev.target.closest("[data-more]");if(!b)return;const id=b.dataset.more,open=!DESC_OPEN.has(id);open?DESC_OPEN.add(id):DESC_OPEN.delete(id);const p=b.previousElementSibling;if(p)p.classList.toggle("open",open);b.textContent=open?"접기":"더보기";b.setAttribute("aria-expanded",open)});
 function card(e){
   const c=catOf(e.category),b=badge(e),fav=state.favs.has(e.id);
   const mapUrl="https://map.naver.com/p/search/"+encodeURIComponent((e.place||e.title).split("(")[0].trim());
@@ -710,7 +715,7 @@ function card(e){
     <div class="meta"><span>${esc(e.place||"")}</span></div>
     <div class="meta" style="align-items:center">${feeHTML}</div>
     ${e.game||e.eventType?`<div class="meta"><span class="gtag">${esc([e.game,e.eventType].filter(Boolean).join(" · "))}</span></div>`:""}
-    ${e.desc?`<p class="desc">${esc(e.desc)}</p>`:""}
+    ${e.desc?(e.desc.length>70?`<p class="desc clamp${DESC_OPEN.has(e.id)?" open":""}">${esc(e.desc)}</p><button class="more" data-more="${esc(e.id)}" aria-expanded="${DESC_OPEN.has(e.id)}">${DESC_OPEN.has(e.id)?"접기":"더보기"}</button>`:`<p class="desc">${esc(e.desc)}</p>`):""}
     ${e.promo&&e.promo!=="없음"?`<div class="promo"><span class="plbl">프로모 카드</span><span>${esc(e.promo)}</span></div>`:""}
     ${tixHTML(e)}
     <div class="actions">

@@ -60,7 +60,7 @@ async function detail(id) {
     if (home && !/^https?:\/\//i.test(home)) home = "http://" + home;
     if (/^https?:\/\/(www\.)?(instagram|facebook|blog\.naver|youtube)\./i.test(home)) home = home; // SNS도 공식 채널로 인정
     const ov = String(it.overview || "").replace(/<[^>]+>/g, " ").replace(/&[a-z]+;/g, " ").replace(/\s+/g, " ").trim();
-    return { home, overview: ov.length > 90 ? ov.slice(0, 88) + "…" : ov };
+    return { home, overview: ov.length > 600 ? ov.slice(0, 598) + "…" : ov };
   } catch { return {}; }
 }
 

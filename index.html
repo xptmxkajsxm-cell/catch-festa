@@ -321,10 +321,26 @@ details.panel .in{padding:0 16px 16px;display:grid;gap:10px;font-size:14px}
 footer{margin-top:28px;font-size:12px;color:var(--muted)}
 footer a{color:var(--muted)}
 @media (prefers-reduced-motion:no-preference){.card{transition:border-color .15s}}
+
+/* 아래쪽 탭바 */
+.wrap{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:8;display:grid;grid-template-columns:repeat(4,1fr);gap:0;width:auto;max-width:none;margin:0;border:0;border-top:1px solid var(--line);border-radius:0;background:var(--surface);padding:6px max(8px,env(safe-area-inset-left,0px)) calc(6px + env(safe-area-inset-bottom,0px))}
+.tabbar button{display:grid;justify-items:center;gap:2px;padding:6px 0;border-radius:0;background:none!important;color:var(--muted);font-size:11.5px;font-weight:700}
+.tabbar button svg{width:23px;height:23px}
+.tabbar button[aria-pressed="true"]{color:var(--accent)}
+.tabbar #favCount:not(:empty){font-size:11px}
+@media (min-width:800px){.tabbar{left:50%;right:auto;width:760px;transform:translateX(-50%);border:1px solid var(--line);border-bottom:0;border-radius:14px 14px 0 0}}
+.totop{bottom:calc(80px + env(safe-area-inset-bottom,0px))}
 </style>
 
 <div class="bgdeco" aria-hidden="true"></div>
 <div class="wrap">
+<nav class="tabs tabbar" aria-label="보기">
+        <button id="tab-list" aria-pressed="true" data-view="list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5.5h-5V20H5a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>홈</span></button>
+        <button id="tab-map" aria-pressed="false" data-view="map"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5a7 7 0 0 0-14 0C5 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9.5" r="2.5" fill="currentColor"/></svg><span>지도</span></button>
+        <button id="tab-cal" aria-pressed="false" data-view="cal"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>달력</span></button>
+        <button id="tab-fav" aria-pressed="false" data-view="fav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>찜 <span id="favCount"></span></span></button>
+      </nav>
   <header class="top hero">
     <canvas id="sky" aria-hidden="true"></canvas>
     <div>
@@ -336,12 +352,7 @@ footer a{color:var(--muted)}
 
   <div class="bar">
     <div class="row" style="justify-content:space-between">
-      <div class="tabs" role="group" aria-label="보기">
-        <button id="tab-list" aria-pressed="true" data-view="list">목록</button>
-        <button id="tab-map" aria-pressed="false" data-view="map">지도</button>
-        <button id="tab-cal" aria-pressed="false" data-view="cal">달력</button>
-        <button id="tab-fav" aria-pressed="false" data-view="fav">찜 <span id="favCount"></span></button>
-      </div>
+
       <label class="search"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M13 13l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><input id="q" type="text" placeholder="행사 이름·장소 검색" aria-label="검색"></label>
     </div>
     <div class="row2">
@@ -1309,6 +1320,8 @@ async function checkFee(cid,btn){
 
 <script>if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));</script>
 <script>
+/* 아래 탭을 누르면 맨 위로 */
+document.querySelector(".tabbar").addEventListener("click",e=>{if(e.target.closest("[data-view]")){document.querySelector(".bar").classList.remove("hid");window.scrollTo(0,0)}});
 /* 스크롤 내리면 위쪽 탭 숨기기, 올리면 다시 보이기 + 맨 위로 버튼 */
 (function(){
   const bar=document.querySelector(".bar");if(!bar)return;
